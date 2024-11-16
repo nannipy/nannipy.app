@@ -67,7 +67,7 @@ export const metadata: Metadata = {
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/icon-192x192.png" />
         <meta name="theme-color" content="#000000" />
-        <meta name="google-site-verification" content="YH_41EbbM-tFVK7DnClTOOVSkYfBc8gQ6s8af5xUHv8" />
+        <meta name="google-site-verification" content="kJUIQCIwNWnDtwEV658OTfsyg68KzpmVixVQbDE1LnI" />
       </head>
       <body className="bg-black ">
               {children}
