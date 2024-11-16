@@ -71,7 +71,8 @@ export const metadata: Metadata = {
       <body className="bg-black ">
               {children}
               <Analytics />
-        <Footer />
+              <Footer />
+
       </body>
     </html>
   );
