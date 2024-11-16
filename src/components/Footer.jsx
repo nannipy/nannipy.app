@@ -5,9 +5,12 @@ import Image from 'next/image';
 const Footer = () => {
   const [showAnimation, setShowAnimation] = useState(false);
   const [logoPositions, setLogoPositions] = useState([
-    { x: 0.1, y: 0.1, dx: 1, dy: 1.5, size: 100 },
-    { x: 0.3, y: 0.2, dx: -1.5, dy: 1.2, size: 120 },
-    { x: 0.5, y: 0.3, dx: 1.2, dy: -1.8, size: 150 }
+    { x: 0.1, y: 0.1, dx: 1, dy: 1.5, size: 150 },
+    { x: 0.3, y: 0.2, dx: -1.5, dy: 1.2, size: 150 },
+    { x: 0.5, y: 0.3, dx: 1.2, dy: -1.8, size: 150 },
+    { x: 0.2, y: 0.1, dx: 1.2, dy: -1.8, size: 150 },
+    { x: 0.4, y: 0.3, dx: -1.8, dy: 1.2, size: 150 },
+    { x: 0.6, y: 0.2, dx: 1.2, dy: -1.8, size: 150 }
   ]);
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
@@ -29,7 +32,7 @@ const Footer = () => {
         setTimeout(() => {
           setShowAnimation(false);
           window.location.href = '/'; // Redirect to homepage
-        }, 10000);
+        }, 5000);
       }
     };
     return handleClick;
