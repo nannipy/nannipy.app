@@ -4,7 +4,7 @@ import type { ExperienceItem } from "../app/page.tsx";
 export const workItems = [
   {
     name: "Sapienza Foiling Team",
-    github: "https://github.com/nannipy/sapienza-foiling-team",
+    github: "https://github.com/nannipy/SapienzaFoilingTeam",
     link: "https://sapienzafoilingteam.vercel.app",
     position: "",
     description:
