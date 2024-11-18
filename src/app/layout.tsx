@@ -1,85 +1,93 @@
-import "../styles/globals.css";
-import { type Metadata } from "next";
-import Footer from "../components/Footer.jsx";
-import { Analytics } from "@vercel/analytics/react"
+import '../styles/globals.css';
+import type { Metadata, Viewport } from 'next';
+import type { ReactNode } from 'react';
+import Footer from '../components/Footer.jsx';
+import { Analytics } from '@vercel/analytics/react';
 
-
+export const viewport: Viewport = {
+  themeColor: '#000000',
+  width: 'device-width',
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nannipy.vercel.app"),
+  metadataBase: new URL('https://nannipy.vercel.app'),
   title: {
-    default: "Nannipy - Portfolio",
-    template: "%s | Giovanni Battista Pernazza",
+    default: 'Nannipy - Portfolio',
+    template: '%s | Giovanni Battista Pernazza',
   },
-  description: "Giovanni Battista Pernazza: Developer, Software Engineer, Entrepreneur",
+  description: 'Giovanni Battista Pernazza: Software Engineer, Developer, Entrepreneur',
   openGraph: {
-    title: "NanniPy - Portfolio",
-    description: "Developer, Software Engineer, Entrepreneur",
-    url: "https://nannipy.vercel.app",
-    siteName: "Giovanni Battista Pernazza",
-    locale: "en_US",
-    type: "website",
-    images: ["https://nannipy.vercel.app/favicon.ico"],
-    
+    title: 'Nannipy - Portfolio',
+    description: 'Giovanni Battista Pernazza: Software Engineer, Developer, Entrepreneur',
+    url: 'https://nannipy.vercel.app',
+    siteName: 'Giovanni Battista Pernazza',
+    locale: 'en_US',
+    type: 'website',
+    images: [
+      {
+        url: 'https://nannipy.vercel.app/images/meta-tags.png',
+        width: 1200,
+        height: 630,
+        alt: 'Nannipy Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nannipy - Portfolio',
+    description: 'Giovanni Battista Pernazza: Software Engineer, Developer, Entrepreneur',
+    images: ['https://nannipy.vercel.app/images/meta-tags.png'],
   },
   robots: {
     index: true,
     follow: true,
-    "max-video-preview": -1,
-    "max-image-preview": "large",
-    "max-snippet": -1,
-    googleBot: "index, follow",
-  },
-  applicationName: "Giovanni Battista Pernazza",
-  creator: "Giovanni Battista Pernazza",
-  keywords: [
-    "Giovanni Battista Pernazza",
-    "developer",
-    "entrepreneur",
-    "blog",
-    "portfolio",
-    "full stack",
-  ],
-  twitter: {
-    title: "Giovanni Battista Pernazza",
-    card: "summary_large_image",
-    creator: "@nannipy",
-  },
-  alternates: {
-    types: {
-      "application/rss+xml": "https://nannipy.vercel.app/rss.xml",
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
   },
+  icons: {
+    icon: [
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  manifest: '/site.webmanifest',
+  applicationName: 'Giovanni Battista Pernazza',
+  creator: 'Giovanni Battista Pernazza',
+  keywords: [
+    'Giovanni Battista Pernazza',
+    'developer',
+    'entrepreneur',
+    'portfolio',
+    'software engineer',
+  ],
+  authors: [{ name: 'Giovanni Battista Pernazza' }],
+  category: 'portfolio',
 };
 
+interface RootLayoutProps {
+  children: ReactNode;
+}
 
-/*************  ✨ Codeium Command ⭐  *************/
-/******  9226ddea-dcb5-483a-b203-ffab58e76323  *******/export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    
-    <html lang="en" className="bg-black text-xl">
-      <head>
-      <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <link rel="shortcut icon" href="/favicon.ico" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      <meta name="apple-mobile-web-app-title" content="Nannipy" />
-      <link rel="manifest" href="/site.webmanifest" />
-      <meta name="google-site-verification" content="kJUIQCIwNWnDtwEV658OTfsyg68KzpmVixVQbDE1LnI" />
-      </head>
-      <body className="bg-black ">
-              {children}
-              <Analytics />
-              <Footer />
-
+    <html lang="en" className="bg-black text-xl justify-between">
+      <body className="bg-black min-h-screen flex flex-col ">
+        <main className="flex-grow ">
+          {children}
+        </main>
+        <Analytics />
+        <Footer />
       </body>
     </html>
   );
 }
-
-
-

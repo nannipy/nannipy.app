@@ -102,7 +102,7 @@ function LocationIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="h-5 w-5 transition-transform duration-300 group-hover:bounce"
+      className="h-5 w-5 transition-transform duration-300 group-hover:rotate-12"
     >
       <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
       <circle cx="12" cy="10" r="3" />
@@ -131,7 +131,7 @@ function ExperienceSection({
       <h3 className="mb-6 text-xl font-medium transform transition-all duration-300 hover:scale-105">{title}</h3>
       {items.map((item, index) => (
         <div key={index} className="relative transform transition-all duration-300 hover:translate-x-2">
-          <div className="min-h-[140px] p-4 rounded-lg transition-all duration-300 hover:bg-neutral-800/30">
+          <div className="min-h-[140px] p-4 rounded-lg transition-all duration-300 hover:bg-neutral-600/30">
             <div className="flex justify-between items-start gap-4">
               {item.link ? (
                 <a
@@ -194,7 +194,7 @@ export default function Home() {
       <div className="flex flex-col gap-2">
         <div className="group flex items-center gap-2 text-neutral-300 transform transition-all duration-300 hover:translate-x-2">
           <LocationIcon />
-          <p>Roma, Italia</p>
+          <p className="inline-flex">Roma, Italia</p>
         </div>
 
         <div className="group flex items-center gap-2 text-neutral-300 transform transition-all duration-300 hover:translate-x-2">

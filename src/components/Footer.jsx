@@ -83,7 +83,7 @@ const Footer = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="px-14 mb-10 justify-center">
+      <div className="px-16 mb-10 justify-center items-center">
         <a onClick={handleLogoClick()}>
           <Image src="/madeLogos.png" alt="logo" width={100} height={100} />
         </a>
