@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     template: '%s | Giovanni Battista Pernazza',
   },
   description: 'Giovanni Battista Pernazza: Software Engineer, Developer, Entrepreneur',
+  verification: {
+    google: 'kJUIQCIwNWnDtwEV658OTfsyg68KzpmVixVQbDE1LnI',
+  },
   openGraph: {
     title: 'Nannipy - Portfolio',
     description: 'Giovanni Battista Pernazza: Software Engineer, Developer, Entrepreneur',
