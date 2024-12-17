@@ -18,14 +18,7 @@ export const workItems = [
     description:
       "the web app you're looking at right now, built with nextjs, tailwindcss, trpc and supabase. It's very simple but i love it <3",
   },
-  {
-    name: "ADM - sport and nutrition",
-    github: "https://github.com/nannipy/adm",
-    link: "https://adm-sportandnutrition.vercel.app/",
-    position: "",
-    description:
-      "a web app for a personal trainer, built for gym trainings and nutrition monitoring with a simple and clean UI.",
-  }
+  
   /*
   {
     name: "freelance developer",

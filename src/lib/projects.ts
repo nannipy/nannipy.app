@@ -17,6 +17,14 @@ export const projectItems = [
     description:
       "a web app for Agricola Pernazza, a farm located in Amelia, Italy. You can find information about the farm, the animals, the activities and the events and order products.",
   },
+  {
+    name: "ADM - sport and nutrition",
+    github: "https://github.com/nannipy/adm",
+    link: "https://adm-sportandnutrition.vercel.app/",
+    position: "",
+    description:
+      "a web app for a personal trainer, built for gym trainings and nutrition monitoring with a simple and clean UI.",
+  }
 
 
   
