@@ -208,7 +208,8 @@ export default function Home() {
           { href: "mailto:gb.pernazza@gmail.com", text: "email" },
           { href: "https://www.linkedin.com/in/giovannibpernazza", text: "linkedin" },
           { href: "https://github.com/nannipy", text: "github" },
-          { href: "https://www.instagram.com/nanni.py/", text: "instagram" }
+          { href: "https://www.instagram.com/nanni.py/", text: "instagram" },
+          { href: "https://docs.google.com/document/d/1vAQ1L3jJVlAHoDqd7wD-Hajjb4rq8G9MCdZC5TdDHrA/edit?tab=t.0", text: "CV" }
         ].map((link, index) => (
           <li key={index} className="transform transition-all duration-300 hover:translate-y--1">
             <a
