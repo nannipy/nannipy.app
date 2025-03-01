@@ -1,70 +1,122 @@
-# Giovanni Battista Pernazza - Personal Portfolio
 
-Un'applicazione web creata con Next.js e TypeScript per mostrare il mio portfolio di progetti e le esperienze lavorative. La web app include animazioni fluide e una sezione terminal per un effetto di scrittura, che aggiunge un tocco dinamico e interattivo alla mia presentazione.
+<div align="center">
+  <img src="public/favicon.svg" alt="Portfolio Logo" width="80" height="80">
+  <h1>Giovanni Battista Pernazza</h1>
+  <p>Modern Portfolio & Digital Garden 🌱</p>
 
-## Funzionalità
+  <p>
+    <a href="https://nannipy.vercel.app">View Demo</a>
+    ·
+    <a href="https://github.com/nannipy/nannipy/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/nannipy/nannipy/issues">Request Feature</a>
+  </p>
 
-- **Typing Effect**: Un effetto di scrittura automatica per introdurre il mio nome e la descrizione.
-- **Icone interattive**: Icone animate per link social e progetti.
-- **Sezioni Esperienza e Progetti**: Mostra progetti personali e le esperienze lavorative con dettagli aggiuntivi.
-- **Interattività e Transizioni**: Animazioni di hover e transizioni per un'esperienza fluida.
-  
-## Tecnologie
+  <img src="https://img.shields.io/github/license/nannipy/nannipy?style=flat-square" alt="License">
+  <img src="https://img.shields.io/github/stars/nannipy/nannipy?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/nannipy/nannipy?style=flat-square" alt="Forks">
+</div>
 
-- **Next.js**
-- **TypeScript**
-- **React.js**
-- **Tailwind CSS** per la gestione dello stile
+---
 
-## Struttura dei file principali
+## ✨ About
 
-- `pages/index.tsx`: Componente principale della homepage.
-- `components/TypingEffect.tsx`: Componente per l'effetto di scrittura automatica.
-- `lib/projects.ts` e `lib/work.ts`: Dati per i progetti e le esperienze lavorative.
+A cutting-edge portfolio built with Next.js and TypeScript, featuring smooth animations and a terminal-style interface. Experience a perfect blend of modern design and interactive elements.
 
-## Requisiti
+### 🎯 Key Highlights
 
-- **Node.js**: Versione 14 o superiore
-- **Yarn** o **npm**
+- 🖥️ **Terminal Experience** - Immersive typing animations
+- 🎨 **Modern Design** - Clean, minimal, and responsive
+- ⚡ **Lightning Fast** - Optimized for performance
+- 🌙 **Dark Mode** - Easy on the eyes
+- 📱 **Fully Responsive** - Perfect on all devices
 
-## Installazione
+## 🛠️ Built With
 
-1. Clona il repository:
-   ```bash
-   git clone https://github.com/nannipy/nome-del-repository.git
-   cd nome-del-repository
+<div align="center">
 
-2.	Installa le dipendenze:
-   ```bash
-    npm install
-    # oppure
-    yarn install
+[![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
 
-3.	Avvia l’applicazione in modalità sviluppo:
-   ```bash
-   npm run dev
-   # oppure
-   yarn dev
-       
-4.	Apri il browser e visita http://localhost:3000 per vedere l’app in azione.
+</div>
 
-## Scripts
+## 🗂️ Project Structure
 
-	dev: Avvia l’app in modalità sviluppo.
-	•	build: Compila il progetto per la produzione.
-	•	start: Avvia il server in modalità produzione.
+```bash
+src/
+├── 📱 app/           # Next.js app router
+├── 🧩 components/    # Reusable components
+├── 📚 lib/          # Data & utilities
+├── 🎨 styles/       # Global styles
+└── 📝 types/        # TypeScript types
+```
 
-## Deployment
+## 🚀 Quick Start
 
-L’applicazione può essere facilmente distribuita su piattaforme come Vercel o Netlify. La configurazione Next.js è già pronta per essere distribuita senza necessità di modifiche.
+### Prerequisites
 
-## Contatti
+```bash
+node -v >= 14.0.0
+```
 
-Per maggiori informazioni, puoi contattarmi tramite:
-	•	Email: gb.pernazza@gmail.com
-	•	LinkedIn: linkedin.com/in/giovannibpernazza
-	•	GitHub: nannipy
+### Installation
 
-## Licenza
+1️⃣ Clone & Install:
+```bash
+git clone https://github.com/nannipy/nannipy.git && cd nannipy && npm install
+```
 
-Questo progetto è distribuito sotto la licenza MIT. Vedi il file LICENSE per maggiori dettagli.
+2️⃣ Start developing:
+```bash
+npm run dev
+```
+
+3️⃣ View at: [http://localhost:3000](http://localhost:3000) 🎉
+
+## 📋 Available Commands
+
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run start    # Start production server
+npm run lint     # Check code quality
+```
+
+## 🤝 Contributing
+
+1. 🔱 Fork it
+2. 🌿 Create your branch (`git checkout -b feature/AmazingFeature`)
+3. 💫 Commit changes (`git commit -m 'Add AmazingFeature'`)
+4. 🚀 Push (`git push origin feature/AmazingFeature`)
+5. 🎉 Open a PR
+
+## 📌 Roadmap
+
+- [ ] 🧪 Unit testing implementation
+- [ ] 📝 Blog section
+- [ ] 🌐 Internationalization
+- [ ] ♿ Accessibility improvements
+- [ ] 🌓 Theme switcher
+
+## 👤 Connect
+
+<div align="center">
+
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:gb.pernazza@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/giovannibpernazza)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nannipy)
+
+</div>
+
+## 📄 License
+
+Released under the MIT License. See `LICENSE` for more information.
+
+---
+
+<div align="center">
+  <sub>Built with ❤️ by Giovanni Battista Pernazza</sub>
+</div>
