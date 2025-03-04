@@ -2,12 +2,12 @@ import type { ExperienceItem } from "../app/page.tsx";
 
 export const projectItems = [
   {
-    name: "Agricola Pernazza",
-    github: "https://github.com/nannipy/agricolapernazza",
-    link: "https://agricolapernazza.vercel.app/",
+    name: "Virus Scanner",
+    github: "https://github.com/AlexGallo8/VirusScanner.git",
+    link: "https://github.com/AlexGallo8/VirusScanner.git",
     position: "",
     description:
-      "a web app for Agricola Pernazza, a farm located in Amelia, Italy. You can find information about the farm, the animals, the activities and the events and order products.",
+      "a web app to scan for viruses in a given file or url, built with Ruby on rails, tailwindcss, Virustotal api and Auth0 for authentication.",
   },
   {
     name: "ADM - sport and nutrition",
