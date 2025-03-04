@@ -228,10 +228,12 @@ export default function Home() {
         ))}
       </ul>
 
-      <div className="terminal-container bg-neutral-900/50 p-4 rounded-lg mb-6">
+      <div className="bg-neutral-900/50 p-4 rounded-lg mb-6  ">
         <TypingEffect 
-          text="I'm a software developer with a passion for building web applications. I'm always looking for new challenges and opportunities to learn and grow."
-          speed={30}
+          text="I’m a software engineer passionate about building sleek, high-performance web applications with Next.js and TypeScript.
+           I love blending clean design with seamless functionality, always striving for intuitive user experiences. Beyond coding, 
+           I’m a tech enthusiast who enjoys exploring new trends on YouTube, refining my design skills, and pushing my limits through running."
+          speed={5}
         />
       </div>
 

@@ -115,7 +115,6 @@ npm run lint     # Check code quality
 
 Released under the MIT License. See `LICENSE` for more information.
 
----
 
 <div align="center">
   <sub>Built with ❤️ by Giovanni Battista Pernazza</sub>
