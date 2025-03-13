@@ -107,8 +107,8 @@ function ExperienceSection({
       <h3 className="mb-6 text-xl font-medium transform transition-all duration-300 hover:scale-105">{title}</h3>
       {items.map((item, index) => (
         <div key={index} className="relative transform transition-all duration-300 hover:translate-x-2">
-          <div className="min-h-[140px] p-4 rounded-lg transition-all duration-300 bg-neutral-900/50 hover:bg-neutral-600/30">
-            <div className="flex justify-between items-start gap-4">
+          <div className="min-h-[140px] p-6 rounded-lg transition-all duration-300 bg-neutral-900/50 hover:bg-neutral-600/30">
+            <div className="flex justify-between items-start gap-6">
               {item.link ? (
                 <a
                   href={item.link}
@@ -165,7 +165,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#111111] p-8 md:p-12 lg:p-16">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8">
         <div className="md:col-span-4 space-y-6 ">
-          <div className="p-4 rounded-lg bg-neutral-900/50">
+          <div className="p-6 rounded-lg bg-neutral-900/50">
             <h1 className="text-2xl font-bold tracking-tighter flex items-center gap-2">
               <div className="flex-grow">
                 Giovanni Battista Pernazza
@@ -173,7 +173,7 @@ export default function Home() {
               
             </h1>
 
-            <div className="space-y-3">
+            <div className="space-y-4 mt-3">
               <div className="group flex items-center gap-2 text-neutral-400 hover:text-white transition-colors">
                 <LocationIcon />
                 <p>Rome, Italy</p>
@@ -184,7 +184,7 @@ export default function Home() {
               </div>
             </div>
 
-            <ul className="flex flex-wrap gap-4 mt-2 justify-center text-neutral-400">
+            <ul className="flex flex-wrap gap-6 mt-2  text-neutral-400">
               {[
                 { href: "mailto:gb.pernazza@gmail.com", text: "email" },
                 { href: "https://www.linkedin.com/in/giovannibpernazza", text: "linkedin" },
@@ -211,7 +211,7 @@ export default function Home() {
           </div>
 
 
-          <div className="p-4 rounded-lg bg-neutral-900/50">
+          <div className="p-6 rounded-lg bg-neutral-900/50">
             <div>
               I&apos;m a software engineer passionate about building sleek, high-performance web applications with Next.js and TypeScript.
               I love blending clean design with seamless functionality, always striving for intuitive user experiences. Beyond coding, I&apos;m a tech enthusiast,
@@ -221,7 +221,7 @@ export default function Home() {
         </div>
 
         <div className="md:col-span-8 ">
-          <h2 className=" p-4 rounded-lg bg-neutral-900/50 text-2xl font-bold text-center ">my projects</h2>    
+          <h2 className=" p-3 rounded-lg bg-neutral-900/50 text-2xl font-bold text-center ">my projects</h2>    
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <ExperienceSection title="" items={projectItems} />
             <ExperienceSection title="" items={workItems} />
