@@ -226,17 +226,6 @@ export default function Home() {
             <ExperienceSection title="" items={projectItems} />
             <ExperienceSection title="" items={workItems} />
           </div>
-          
-          <a 
-            href="https://github.com/nannipy" 
-            className="inline-flex items-center group text-neutral-400 hover:text-white transition-colors"
-          >
-            <span className="relative mt-10">
-              Scopri tutti i miei progetti su github
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
-            </span>
-            <UpRightArrowIcon />
-          </a>
         </div>
       </div>
     </main>
