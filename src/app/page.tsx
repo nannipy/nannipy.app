@@ -4,30 +4,6 @@ import React, { useState, useEffect } from 'react';
 import { projectItems } from "../lib/projects.ts";
 import { workItems } from "../lib/work.ts";
 
-// Terminal typing effect component
-const TypingEffect = ({ text, speed = 50 }: { text: string, speed?: number }) => {
-  const [displayText, setDisplayText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    if (currentIndex < text.length) {
-      const timeout = setTimeout(() => {
-        setDisplayText(prev => prev + text[currentIndex]);
-        setCurrentIndex(c => c + 1);
-      }, speed);
-      return () => clearTimeout(timeout);
-    }
-  }, [currentIndex, text, speed]);
-
-  return (
-    <div className="">
-      {displayText}
-      {currentIndex < text.length && (
-        <span className="animate-pulse">_</span>
-      )}
-    </div>
-  );
-};
 
 function UpRightArrowIcon() {
   return (
@@ -127,21 +103,21 @@ function ExperienceSection({
   github?: boolean;
 }) {
   return (
-    <section className="text-left">
+    <section className="text-left ">
       <h3 className="mb-6 text-xl font-medium transform transition-all duration-300 hover:scale-105">{title}</h3>
       {items.map((item, index) => (
         <div key={index} className="relative transform transition-all duration-300 hover:translate-x-2">
-          <div className="min-h-[140px] p-4 rounded-lg transition-all duration-300 hover:bg-neutral-600/30">
+          <div className="min-h-[140px] p-4 rounded-lg transition-all duration-300 bg-neutral-900/50 hover:bg-neutral-600/30">
             <div className="flex justify-between items-start gap-4">
               {item.link ? (
                 <a
                   href={item.link}
                   target="_blank"
-                  className="font-medium group transition-all duration-300 hover:text-blue-400"
+                  className="font-medium group transition-all duration-300 hover:text-white"
                 >
                   <span className="relative">
                     {item.name}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
                   </span>
                 </a>
               ) : (
@@ -151,12 +127,12 @@ function ExperienceSection({
               {item.github && (
                 <a
                   href={item.github}
-                  className="group flex items-center transition-all duration-300 hover:text-blue-400"
+                  className="group flex items-center transition-all duration-300 hover:text-white"
                 >
                   <GithubIcon />
                   <p className="ml-2 h-7 relative">
                     git
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
                   </p>
                 </a>
               )}
@@ -186,75 +162,79 @@ export default function Home() {
 
   return (
     
-    <main className="flex min-h-screen flex-col justify-left mt-4 sm:mt-8 md:mt-5 text-white md:px-20 px-5 animate-fadeIn">
-      <h1 className="mb-3 text-xl sm:text-2xl font-bold tracking-tighter">
-        <TypingEffect text="Giovanni Battista Pernazza" speed={70} />
-      </h1>
+    <main className="min-h-screen bg-[#111111] p-8 md:p-12 lg:p-16">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div className="md:col-span-4 space-y-6 ">
+          <div className="p-4 rounded-lg bg-neutral-900/50">
+            <h1 className="text-2xl font-bold tracking-tighter flex items-center gap-2">
+              <div className="flex-grow">
+                Giovanni Battista Pernazza
+              </div>
+              
+            </h1>
 
-      <div className="flex flex-col gap-2">
-        <div className="group flex items-center gap-2 text-neutral-300 transform transition-all duration-300 hover:translate-x-2">
-          <LocationIcon />
-          <p className="inline-flex">Roma, Italia</p>
-        </div>
+            <div className="space-y-3">
+              <div className="group flex items-center gap-2 text-neutral-400 hover:text-white transition-colors">
+                <LocationIcon />
+                <p>Rome, Italy</p>
+              </div>
+              <div className="group flex items-center  gap-2 text-neutral-400 hover:text-white transition-colors">
+                <WorkIcon />
+                <p>SWE</p>
+              </div>
+            </div>
 
-        <div className="group flex items-center gap-2 text-neutral-300 transform transition-all duration-300 hover:translate-x-2">
-          <WorkIcon />
-          <p className="inline-flex">SWE</p>
-        </div>
-      </div>
-
-      <ul className="font-sm my-6 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
-        {[
-          { href: "mailto:gb.pernazza@gmail.com", text: "email" },
-          { href: "https://www.linkedin.com/in/giovannibpernazza", text: "linkedin" },
-          { href: "https://github.com/nannipy", text: "github" },
-          { href: "https://www.instagram.com/nanni.py/", text: "instagram" },
-          { href: "https://docs.google.com/document/d/1vAQ1L3jJVlAHoDqd7wD-Hajjb4rq8G9MCdZC5TdDHrA/edit?tab=t.0", text: "CV" }
-        ].map((link, index) => (
-          <li key={index} className="transform transition-all duration-300 hover:translate-y--1">
-            <a
-              className="group flex items-center transition-all duration-300 hover:text-blue-400"
-              rel="noopener noreferrer"
-              target="_blank"
-              href={link.href}
-            >
-              <p className="mr-1 h-7 relative">
-                {link.text}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
-              </p>
-              <UpRightArrowIcon />
-            </a>
-          </li>
-        ))}
-      </ul>
-
-      <div className="bg-neutral-900/50 p-4 rounded-lg mb-6  ">
-        <TypingEffect 
-          text="I’m a software engineer passionate about building sleek, high-performance web applications with Next.js and TypeScript.
-          I love blending clean design with seamless functionality, always striving for intuitive user experiences. Beyond coding, I’m a tech enthusiast,
-          a design lover, and a YouTube video binge-watcher, always exploring new trends. Running keeps me balanced and fuels my creativity."
-          speed={5}
-        />
-      </div>
-
-      <div className="transform transition-all duration-500 hover:scale-[1.02]">
-        <div className="flex flex-col sm:flex-row gap-10">
-          <div className="sm:flex-1 sm:max-w-md mt-7">
-            <ExperienceSection title="Last Projects" items={projectItems} />
+            <ul className="flex flex-wrap gap-4 mt-2 justify-center text-neutral-400">
+              {[
+                { href: "mailto:gb.pernazza@gmail.com", text: "email" },
+                { href: "https://www.linkedin.com/in/giovannibpernazza", text: "linkedin" },
+                { href: "https://github.com/nannipy", text: "github" },
+                { href: "https://www.instagram.com/nanni.py/", text: "instagram" },
+                { href: "https://docs.google.com/document/d/1vAQ1L3jJVlAHoDqd7wD-Hajjb4rq8G9MCdZC5TdDHrA/edit?tab=t.0", text: "CV" }
+              ].map((link, index) => (
+                <li key={index}>
+                  <a
+                    className="group flex items-center hover:text-white transition-colors"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href={link.href}
+                  >
+                    <span className="relative">
+                      {link.text}
+                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
+                    </span>
+                    <UpRightArrowIcon />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="sm:flex-1 sm:max-w-md mt-7 sm:mt-14">
+
+
+          <div className="p-4 rounded-lg bg-neutral-900/50">
+            <div>
+              I&apos;m a software engineer passionate about building sleek, high-performance web applications with Next.js and TypeScript.
+              I love blending clean design with seamless functionality, always striving for intuitive user experiences. Beyond coding, I&apos;m a tech enthusiast,
+              a design lover, and a YouTube video binge-watcher, always exploring new trends. Running keeps me balanced and fuels my creativity.
+            </div>
+          </div>
+        </div>
+
+        <div className="md:col-span-8 ">
+          <h2 className=" p-4 rounded-lg bg-neutral-900/50 text-2xl font-bold text-center ">my projects</h2>    
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <ExperienceSection title="" items={projectItems} />
             <ExperienceSection title="" items={workItems} />
           </div>
-        </div>
-        <div className='mb-10'>
+          
           <a 
             href="https://github.com/nannipy" 
-            className="group flex items-center mt-4 font-medium transition-all duration-300 hover:text-blue-400"
+            className="inline-flex items-center group text-neutral-400 hover:text-white transition-colors"
           >
-            <p className="relative">
+            <span className="relative mt-10">
               Scopri tutti i miei progetti su github
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full "></span>
-            </p>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
+            </span>
             <UpRightArrowIcon />
           </a>
         </div>

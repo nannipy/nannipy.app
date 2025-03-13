@@ -3,8 +3,16 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Terminal';
-  src: url('/fonts/vt323-latin-400-normal.otf') format('opentype');
+  font-family: 'Geist';
+  src: url('/fonts/Geist-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GeistMono';
+  src: url('/fonts/GeistMono-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -12,9 +20,38 @@
 
 html {
   min-width: 360px;
-  font-family: 'Terminal', sans-serif;
+  font-family: 'GeistMono', monospace;
+  background-color: #111111;
+  color: #ffffff;
 }
 
+@layer base {
+  body {
+    @apply antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Geist', sans-serif;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-neutral-900/50 rounded-lg p-4 transition-all duration-300 hover:bg-neutral-800/50;
+  }
+
+  .link-underline {
+    @apply relative inline-block;
+  }
+
+  .link-underline::after {
+    @apply content-[''] absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300;
+  }
+
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+}
 
 @media (prefers-color-scheme: dark) {
   .shiki,

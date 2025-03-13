@@ -83,8 +83,8 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className="bg-black text-xl justify-between">
-      <body className="bg-black min-h-screen flex flex-col ">
+    <html lang="en" className="text-xl justify-between">
+      <body>
         <main className="flex-grow ">
           {children}
         </main>

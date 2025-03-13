@@ -82,8 +82,8 @@ const Footer = () => {
   }, [showAnimation, windowSize]);
 
   return (
-    <div className="flex justify-center">
-      <div className="px-16 mb-10 justify-center items-center">
+    <div className="flex justify-center bg-[#111111]">
+      <div className="px-16  justify-center items-center">
         <a onClick={handleLogoClick()}>
           <Image src="/madeLogos.png" alt="logo" width={100} height={100} />
         </a>
