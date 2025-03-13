@@ -1,91 +1,50 @@
+'use client'
 import '../styles/globals.css';
-import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 import Footer from '../components/Footer.jsx';
 import { Analytics } from '@vercel/analytics/react';
-
-export const viewport: Viewport = {
-  themeColor: '#000000',
-  width: 'device-width',
-  initialScale: 1,
-};
-
-export const metadata: Metadata = {
-  metadataBase: new URL('https://nannipy.vercel.app'),
-  title: {
-    default: 'Nannipy - Portfolio',
-    template: '%s | Giovanni Battista Pernazza',
-  },
-  description: 'Giovanni Battista Pernazza: Software Engineer, Developer, Entrepreneur',
-  verification: {
-    google: 'kJUIQCIwNWnDtwEV658OTfsyg68KzpmVixVQbDE1LnI',
-  },
-  openGraph: {
-    title: 'Nannipy - Portfolio',
-    description: 'Giovanni Battista Pernazza: Software Engineer, Developer, Entrepreneur',
-    url: 'https://nannipy.vercel.app',
-    siteName: 'Giovanni Battista Pernazza',
-    locale: 'en_US',
-    type: 'website',
-    images: [
-      {
-        url: 'https://nannipy.vercel.app/images/meta-tags.png',
-        width: 1200,
-        height: 630,
-        alt: 'Nannipy Logo',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Nannipy - Portfolio',
-    description: 'Giovanni Battista Pernazza: Software Engineer, Developer, Entrepreneur',
-    images: ['https://nannipy.vercel.app/images/meta-tags.png'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  icons: {
-    icon: [
-      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
-  },
-  manifest: '/site.webmanifest',
-  applicationName: 'Giovanni Battista Pernazza',
-  creator: 'Giovanni Battista Pernazza',
-  keywords: [
-    'Giovanni Battista Pernazza',
-    'developer',
-    'entrepreneur',
-    'portfolio',
-    'software engineer',
-  ],
-  authors: [{ name: 'Giovanni Battista Pernazza' }],
-  category: 'portfolio',
-};
 
 interface RootLayoutProps {
   children: ReactNode;
 }
 
+function CustomCursor() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const updatePosition = (e: MouseEvent) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', updatePosition);
+
+    return () => window.removeEventListener('mousemove', updatePosition);
+  }, []);
+
+  return (
+    <div
+      className="custom-cursor"
+      style={{
+        left: `${position.x}px`,
+        top: `${position.y}px`,
+      }}
+    />
+  );
+}
+
 export default function RootLayout({ children }: RootLayoutProps) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <html lang="en" className="text-xl justify-between">
-      <body>
-        <main className="flex-grow ">
+      <body suppressHydrationWarning>
+        {isMounted && <CustomCursor />}
+        <main className="flex-grow">
           {children}
         </main>
         <Analytics />
