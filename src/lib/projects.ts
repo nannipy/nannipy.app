@@ -7,8 +7,7 @@ export const projectItems = [
     link: "https://sapienzafoilingteam.vercel.app",
     position: "",
     description:
-      "a web app for the Sapienza foiling team, a student association at the University of Rome. You can find information about the team, the activities and the events.",
-      iconPath: "/icons/next.svg",
+      "a web app for the Sapienza foiling team, a student association at the University of Rome. You can find information about the team, the activities and the events."
   },
   
   {
@@ -17,8 +16,7 @@ export const projectItems = [
     link: "https://adm-sportandnutrition.vercel.app/",
     position: "",
     description:
-      "a web app for a personal trainer, built for gym trainings and nutrition monitoring with a simple and clean UI.",
-      iconPath: "/icons/next.svg",
+      "a web app for a personal trainer, built for gym trainings and nutrition monitoring with a simple and clean UI."
     },
   {
     name: "Parco La Cascina",
@@ -26,8 +24,7 @@ export const projectItems = [
     link: "https://parcolacascina.vercel.app/",
     position: "",
     description:
-      "a web app to search for Parco la Cascina, a farm located near Varese, Italy. You can find information about the farm, the animals, the activities and the events and order products.",
-      iconPath: "/icons/next.svg",
+      "a web app to search for Parco la Cascina, a farm located near Varese, Italy. You can find information about the farm, the animals, the activities and the events and order products."
     }
     
 ] satisfies ExperienceItem[];
