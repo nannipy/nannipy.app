@@ -3,13 +3,23 @@ import type { ExperienceItem } from "../app/page.tsx";
 
 export const workItems = [
   {
-    name: "Sapienza Foiling Team",
-    github: "https://github.com/nannipy/SapienzaFoilingTeam",
-    link: "https://sapienzafoilingteam.vercel.app",
+    name: "Virus Scanner",
+    github: "https://github.com/AlexGallo8/VirusScanner.git",
+    link: "https://github.com/AlexGallo8/VirusScanner.git",
     position: "",
     description:
-      "a web app for the Sapienza foiling team, a student association at the University of Rome. You can find information about the team, the activities and the events.",
-  },
+      "a web app to scan for viruses in a given file or url, built with Ruby on rails, tailwindcss, Virustotal api and Auth0 for authentication.",
+      iconPath: "/icons/next.svg",
+    },
+  {
+    name: "freelance developer",
+    link: "",
+    github: "https://github.com/nannipy",
+    position: "",
+    description: 
+      "I built custom applications using React, Next.js and Node.js. Full-stack development with focus on responsive, user-friendly solutions.",
+      iconPath: "/icons/next.svg",
+    },
   {
     name: "Portfolio website",
     github: "https://github.com/nannipy/nanni.com",
@@ -17,7 +27,9 @@ export const workItems = [
     position: "",
     description:
       "the web app you're looking at right now, built with nextjs, tailwindcss, trpc and supabase. It's very simple but i love it <3",
-  },
+      iconPath: "/icons/next.svg",
+    },
+ 
   {
     name: "Agricola Pernazza",
     github: "https://github.com/nannipy/agricolapernazza",
@@ -25,15 +37,6 @@ export const workItems = [
     position: "",
     description:
       "a web app for Agricola Pernazza, a farm located in Amelia, Italy. You can find information about the farm, the animals, the activities and the events and order products.",
-  }
-  
-  /*
-  {
-    name: "freelance developer",
-    link: "",
-    position: "",
-    description:
-      "developed multiple projects for clients, such as flutter app for medical devices (at sintesy) or a crm for a small business, and more.",
-  },
-  */
+      iconPath: "/icons/next.svg",
+    },
 ] satisfies ExperienceItem[];

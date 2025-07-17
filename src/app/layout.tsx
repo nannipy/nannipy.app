@@ -41,8 +41,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
   }, []);
 
   return (
-    <html lang="en" className="text-xl justify-between">
-      <body suppressHydrationWarning>
+    <html lang="en" className="text-xl">
+      <head>
+        <title>Nannipy</title>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
+      <body suppressHydrationWarning className="min-h-screen flex flex-col">
         {isMounted && <CustomCursor />}
         <main className="flex-grow">
           {children}
