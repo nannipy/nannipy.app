@@ -3,6 +3,7 @@ import type { ExperienceItem } from "../app/page.tsx";
 
 export const workItems = [
   {
+    id: "recup",
     name: "Recup",
     github: "https://github.com/nannipy/Recup.git",
     link: "https://github.com/nannipy/Recup.git",
@@ -12,6 +13,7 @@ export const workItems = [
      
     },
     {
+      id: "data4run",
       name: "Data4Run",
       link: "https://github.com/nannipy/Data4Run.git",
       github: "https://github.com/nannipy/Data4Run.git",
@@ -20,6 +22,7 @@ export const workItems = [
         "A web application to view and analyze running, cycling and tennis performance using Strava data and gpx files."
       },
   {
+    id: "virus-scanner",
     name: "Virus Scanner",
     github: "https://github.com/AlexGallo8/VirusScanner.git",
     link: "https://github.com/AlexGallo8/VirusScanner.git",
@@ -29,6 +32,7 @@ export const workItems = [
      
     },
   {
+    id: "portfolio-website",
     name: "Portfolio website",
     github: "https://github.com/nannipy/nanni.com",
     link: "/",
@@ -38,6 +42,7 @@ export const workItems = [
     },
  
   {
+    id: "agricola-pernazza",
     name: "Agricola Pernazza",
     github: "https://github.com/nannipy/agricolapernazza",
     link: "https://agricolapernazza.vercel.app/",

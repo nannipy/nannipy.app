@@ -88,6 +88,7 @@ function LocationIcon() {
 }
 
 export type ExperienceItem = {
+  id: string;
   name: string;
   link: string;
   github: string;
@@ -96,38 +97,36 @@ export type ExperienceItem = {
 };
 
 function ExperienceSection({
-  title,
   items,
+  isProject,
 }: {
-  title: string;
   items: ExperienceItem[];
   github?: boolean;
+  isProject?: boolean;
 }) {
   return (
     <section className="text-left ">
-      <h3 className="mb-6 text-xl font-medium transform transition-all duration-300 hover:scale-105">{title}</h3>
       {items.map((item, index) => (
-        <div key={index} className="relative transform transition-all duration-300 hover:translate-x-2">
+        <Link
+          key={index}
+          href={isProject ? `/projects/${item.id}` : `/work/${item.id}`}
+          className="block relative transform transition-all duration-300 hover:translate-x-2"
+        >
           <div className="min-h-[140px] p-6 rounded-lg transition-all duration-300 bg-neutral-900/50 hover:bg-neutral-600/30">
             <div className="flex justify-between items-start gap-6">
-              {item.link ? (
-                <a
-                  href={item.link}
-                  target="_blank"
-                  className="font-medium group transition-all duration-300 hover:text-white"
-                >
-                  <span className="relative">
-                    {item.name}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-                  </span>
-                </a>
-              ) : (
-                <p className="font-medium">{item.name}</p>
-              )}
+              <div className="font-medium group transition-all duration-300 hover:text-white">
+                <span className="relative">
+                  {item.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                </span>
+              </div>
               
               {item.github && (
-                <a
+                <Link
                   href={item.github}
+                  onClick={(e) => e.stopPropagation()}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group flex items-center transition-all duration-300 hover:text-white"
                 >
                   <GithubIcon />
@@ -135,7 +134,7 @@ function ExperienceSection({
                     git
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
                   </p>
-                </a>
+                </Link>
               )}
             </div>
             
@@ -146,7 +145,7 @@ function ExperienceSection({
           </div>
           
           {index !== items.length - 1 && <div className="mt-6"></div>}
-        </div>
+        </Link>
       ))}
     </section>
   );
@@ -231,9 +230,9 @@ export default function Home() {
 
         <div className="md:col-span-8 ">
           <h2 className=" p-3 rounded-lg bg-neutral-900/50 text-2xl font-bold text-center ">my projects</h2>    
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <ExperienceSection title="" items={projectItems} />
-            <ExperienceSection title="" items={workItems} />
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <ExperienceSection items={projectItems} isProject={true} />
+            <ExperienceSection items={workItems} />
           </div>
         </div>
       </div>
