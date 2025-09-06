@@ -92,11 +92,11 @@ export default function ProjectPage() {
     <main className="min-h-screen bg-[#111111] p-8 md:p-12 lg:p-16">
       <div className="max-w-full mx-auto">
         <div className="p-6 rounded-lg bg-neutral-900/50">
-          <div className="flex justify-between items-start gap-6">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-start md:gap-6">
             <h1 className="text-2xl font-bold tracking-tighter">
               {project.name}
             </h1>
-            <div className="flex gap-4">
+            <div className="flex mt-4 md:mt-0 gap-4">
               {project.link && (
                 <Link
                   href={project.link}
