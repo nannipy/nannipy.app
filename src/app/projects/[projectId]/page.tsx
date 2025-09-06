@@ -52,7 +52,7 @@ export default function ProjectPage() {
   const params = useParams();
   const projectId = params?.projectId;
   const project = projectItems.find(
-    (p) => p.name.toLowerCase().replace(/\s/g, "-") === projectId
+    (p) => p.id === projectId
   );
   const [readme, setReadme] = useState("");
   const [loading, setLoading] = useState(true);
@@ -98,7 +98,7 @@ export default function ProjectPage() {
             </h1>
             <div className="flex gap-4">
               {project.link && (
-                <a
+                <Link
                   href={project.link}
                   target="_blank"
                   className="group flex items-center transition-all duration-300 hover:text-white"
@@ -108,10 +108,10 @@ export default function ProjectPage() {
                     Live
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
                   </p>
-                </a>
+                </Link>
               )}
               {project.github && (
-                <a
+                <Link
                   href={project.github}
                   className="group flex items-center transition-all duration-300 hover:text-white"
                 >
@@ -120,7 +120,7 @@ export default function ProjectPage() {
                     GitHub
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
                   </p>
-                </a>
+                </Link>
               )}
             </div>
           </div>

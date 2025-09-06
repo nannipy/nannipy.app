@@ -7,7 +7,6 @@ export const workItems = [
     name: "Recup",
     github: "https://github.com/nannipy/Recup.git",
     link: "https://github.com/nannipy/Recup.git",
-    position: "",
     description:
       "Recup is a web application designed to streamline the management of food and goods recovery and distribution activities. It shows statistics, kpi and other beautiful info ",
      
@@ -17,7 +16,6 @@ export const workItems = [
       name: "Data4Run",
       link: "https://github.com/nannipy/Data4Run.git",
       github: "https://github.com/nannipy/Data4Run.git",
-      position: "",
       description: 
         "A web application to view and analyze running, cycling and tennis performance using Strava data and gpx files."
       },
@@ -26,7 +24,6 @@ export const workItems = [
     name: "Virus Scanner",
     github: "https://github.com/AlexGallo8/VirusScanner.git",
     link: "https://github.com/AlexGallo8/VirusScanner.git",
-    position: "",
     description:
       "a web app to scan for viruses in a given file or url, built with Ruby on rails, tailwindcss, Virustotal api and Auth0 for authentication.",
      
@@ -36,7 +33,6 @@ export const workItems = [
     name: "Portfolio website",
     github: "https://github.com/nannipy/nanni.com",
     link: "/",
-    position: "",
     description:
       "the web app you're looking at right now, built with nextjs, tailwindcss. It's very simple but i love it <3"
     },
@@ -46,7 +42,6 @@ export const workItems = [
     name: "Agricola Pernazza",
     github: "https://github.com/nannipy/agricolapernazza",
     link: "https://agricolapernazza.vercel.app/",
-    position: "",
     description:
       "a web app for Agricola Pernazza, a farm located in Amelia, Italy. You can find information about the farm, the animals, the activities and the events and order products."
     },

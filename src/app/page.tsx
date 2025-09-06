@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { projectItems } from "../lib/projects.ts";
 import { workItems } from "../lib/work.ts";
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 function UpRightArrowIcon() {
@@ -92,7 +93,6 @@ export type ExperienceItem = {
   name: string;
   link: string;
   github: string;
-  position: string;
   description: string;
 };
 
@@ -137,8 +137,6 @@ function ExperienceSection({
                 </Link>
               )}
             </div>
-            
-            <p className="mt-2 transform transition-all duration-300">{item.position}</p>
             <p className="mt-2 text-neutral-700 dark:text-neutral-300">
               {item.description}
             </p>
@@ -166,14 +164,19 @@ export default function Home() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8">
         <div className="md:col-span-4 space-y-6 ">
           <div className="p-6 rounded-lg bg-neutral-900/50">
-            <h1 className="text-2xl font-bold tracking-tighter flex items-center gap-2">
+            <h1 className="text-2xl font-bold tracking-tighter flex items-center gap-6">
+            <Image
+                src="/logo-en2.png"
+                width={60}
+                height={60}
+                alt="Nannipy logo"
+              />
               <div className="flex-grow">
                 Giovanni Battista Pernazza
               </div>
               
             </h1>
-
-            <div className="space-y-4 mt-3">
+            <div className="space-y-4 mt-3 ">
               <div className="group flex items-center gap-2 text-neutral-400 hover:text-white transition-colors">
                 <LocationIcon />
                 <p>Rome, Italy</p>
