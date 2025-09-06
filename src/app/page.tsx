@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { projectItems } from "../lib/projects.ts";
 import { workItems } from "../lib/work.ts";
+import Link from 'next/link';
 
 
 function UpRightArrowIcon() {
@@ -215,7 +216,15 @@ export default function Home() {
             <div>
               I&apos;m a software engineer passionate about building sleek, high-performance web applications with Next.js and TypeScript.
               I love blending clean design with seamless functionality, always striving for intuitive user experiences. Beyond coding, I&apos;m a tech enthusiast,
-              a design lover, and a YouTube video binge-watcher, always exploring new trends. Running keeps me balanced and fuels my creativity.
+              a design lover, and a YouTube video binge-watcher, always exploring new trends.
+              <Link
+                href="https://www.strava.com/athletes/151899362"
+                className="underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Running
+              </Link> keeps me balanced and fuels my creativity.
             </div>
           </div>
         </div>

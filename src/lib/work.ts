@@ -3,6 +3,23 @@ import type { ExperienceItem } from "../app/page.tsx";
 
 export const workItems = [
   {
+    name: "Recup",
+    github: "https://github.com/nannipy/Recup.git",
+    link: "https://github.com/nannipy/Recup.git",
+    position: "",
+    description:
+      "Recup is a web application designed to streamline the management of food and goods recovery and distribution activities. It shows statistics, kpi and other beautiful info ",
+     
+    },
+    {
+      name: "Data4Run",
+      link: "https://github.com/nannipy/Data4Run.git",
+      github: "https://github.com/nannipy/Data4Run.git",
+      position: "",
+      description: 
+        "A web application to view and analyze running, cycling and tennis performance using Strava data and gpx files."
+      },
+  {
     name: "Virus Scanner",
     github: "https://github.com/AlexGallo8/VirusScanner.git",
     link: "https://github.com/AlexGallo8/VirusScanner.git",
@@ -12,20 +29,12 @@ export const workItems = [
      
     },
   {
-    name: "freelance developer",
-    link: "",
-    github: "https://github.com/nannipy",
-    position: "",
-    description: 
-      "I built custom applications using React, Next.js and Node.js. Full-stack development with focus on responsive, user-friendly solutions."
-    },
-  {
     name: "Portfolio website",
     github: "https://github.com/nannipy/nanni.com",
     link: "/",
     position: "",
     description:
-      "the web app you're looking at right now, built with nextjs, tailwindcss, trpc and supabase. It's very simple but i love it <3"
+      "the web app you're looking at right now, built with nextjs, tailwindcss. It's very simple but i love it <3"
     },
  
   {
