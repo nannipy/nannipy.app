@@ -7,6 +7,14 @@ export const workItems = [
     name: "Recup",
     github: "https://github.com/nannipy/Recup.git",
     link: "https://github.com/nannipy/Recup.git",
+    screenshots: [
+      "/Recup/Dashboard.png",
+      "/Recup/Dashboard_2.png",
+      "/Recup/Aggiungi_donazione.png",
+      "/Recup/Account.png",
+      "/Recup/Login.png",
+      "/Recup/Loading.png",
+    ],
     description:
       "Recup is a web application designed to streamline the management of food and goods recovery and distribution activities. It shows statistics, kpi and other beautiful info ",
      
@@ -16,6 +24,17 @@ export const workItems = [
       name: "Data4Run",
       link: "https://github.com/nannipy/Data4Run.git",
       github: "https://github.com/nannipy/Data4Run.git",
+      screenshots: [
+        "/Data4Run/dashboard.png",
+        "/Data4Run/activities.png",
+        "/Data4Run/performance.png",
+        "/Data4Run/trends.png",
+        "/Data4Run/settings.png",
+        "/Data4Run/compact-mode.png",
+        "/Data4Run/sync_page.png",
+        "/Data4Run/loading.png",
+
+      ],
       description: 
         "A web application to view and analyze running, cycling and tennis performance using Strava data and gpx files."
       },
@@ -24,6 +43,15 @@ export const workItems = [
     name: "Virus Scanner",
     github: "https://github.com/AlexGallo8/VirusScanner.git",
     link: "https://github.com/AlexGallo8/VirusScanner.git",
+    screenshots: [
+      "/Virusscanner/home-light.png",
+      "/Virusscanner/scan-virus-light.png",
+      "/Virusscanner/history.png",
+      "/Virusscanner/comments.png",
+      "/Virusscanner/security-guide.png",
+      "/Virusscanner/tech-stack.png",
+      "/Virusscanner/login-light.png",
+    ],
     description:
       "a web app to scan for viruses in a given file or url, built with Ruby on rails, tailwindcss, Virustotal api and Auth0 for authentication.",
      

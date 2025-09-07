@@ -6,7 +6,14 @@ export const projectItems = [
     name: "SFT Website",
     github: "https://github.com/nannipy/SapienzaFoilingTeam",
     link: "https://sapienzafoilingteam.vercel.app",
-
+    screenshots: [
+      "/SFT/SFT_homepage.png",
+      "/SFT/SFT_blog.png",
+      "/SFT/SFT_article_edit.png",
+      "/SFT/SFT_admin_dashboard.png",
+      "/SFT/SFT_media.png",
+      "/SFT/SFT_sponsor.png",
+    ],
     description:
       "Website for the Sapienza foiling team, a student association at the University of Rome. You can find information about the team, the activities and the events"
   },
@@ -15,6 +22,14 @@ export const projectItems = [
     name: "Ollapy",
     github: "https://github.com/nannipy/ollapy.git",
     link: "https://github.com/nannipy/ollapy.git",
+    screenshots: [
+      "/ollapy/Home.png",
+      "/ollapy/Home2.png",
+      "/ollapy/Chat.png",
+      "/ollapy/file_upload.png",
+      "/ollapy/model-choice.png",
+      "/ollapy/search_chats.png",
+    ],
     description:
       "OllaPy is a sleek app interface for interacting with your local language models through Ollama. It provides a private and secure environment for your conversations, running entirely on your local machine."
     },
@@ -31,6 +46,12 @@ export const projectItems = [
     name: "Parco La Cascina",
     github: "https://github.com/nannipy/parcolacascina",
     link: "https://parcolacascina.vercel.app/",
+    screenshots: [
+      "/plc/Home.png",
+      "/plc/Prodotti.png",
+      "/plc/Ordine.png",
+      "/plc/Contatti.png",
+    ],
     description:
       "a web app to search for Parco la Cascina, a farm located near Varese, Italy. You can find information about the farm, the animals, the activities and the events and order products"
     },

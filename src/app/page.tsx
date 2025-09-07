@@ -94,6 +94,7 @@ export type ExperienceItem = {
   link: string;
   github: string;
   description: string;
+  screenshots?: string[];
 };
 
 function ExperienceSection({
