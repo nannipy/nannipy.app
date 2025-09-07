@@ -161,7 +161,7 @@ export default function Home() {
 
   return (
     
-    <main className="min-h-screen bg-[#111111] p-8 md:p-12 lg:p-16">
+    <main className="min-h-screen bg-[#111111] p-2 md:p-12 lg:p-16">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8">
         <div className="md:col-span-4 space-y-6 ">
           <div className="p-6 rounded-lg bg-neutral-900/50">

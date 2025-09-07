@@ -126,7 +126,7 @@ export default function WorkPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#111111] p-8 md:p-12 lg:p-16">
+    <main className="min-h-screen bg-[#111111] p-2 md:p-12 lg:p-16">
       <div className="max-w-full mx-auto">
         <div className="p-6 rounded-lg bg-neutral-900/50">
           <div className="flex flex-col md:flex-row md:justify-between md:items-start md:gap-6">
