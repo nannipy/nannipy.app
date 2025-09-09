@@ -60,6 +60,12 @@ export const projectItems = [
       name: "Youtube Downloader App",
       github: "https://github.com/nannipy/yt-dl",
       link: "https://github.com/nannipy/yt-dl",
+      screenshots: [
+        "/YT-Downloader/app.png",
+        "/YT-Downloader/starting-downloading.png",
+        "/YT-Downloader/downloading.png",
+        "/YT-Downloader/successful.png",
+      ],
         description:
         "YouTube Downloader is a desktop application for downloading easily and efficiently video and audio from YouTube"
       }
