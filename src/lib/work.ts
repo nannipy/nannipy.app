@@ -16,8 +16,7 @@ export const workItems = [
       "/Recup/Loading.png",
     ],
     description:
-      "Recup is a web application designed to streamline the management of food and goods recovery and distribution activities. It shows statistics, kpi and other beautiful info ",
-     
+      " Recup is a beautiful NGO project I’m collaborating with, where I’m building a personalized CRM to manage their data and  make their work more efficient, organized, and even enjoyable."     
     },
     {
       id: "data4run",
@@ -36,7 +35,7 @@ export const workItems = [
 
       ],
       description: 
-        "A web application to view and analyze running, cycling and tennis performance using Strava data and gpx files."
+        "I want to build my ultimate, privacy-oriented data center to collect and analyze all my activity data, learning and having fun along the way. This web application lets you view and analyze running, cycling, and tennis performance using Strava data and GPX files."
       },
   {
     id: "virus-scanner",
@@ -53,7 +52,7 @@ export const workItems = [
       "/Virusscanner/login-light.png",
     ],
     description:
-      "a web app to scan for viruses in a given file or url, built with Ruby on rails, tailwindcss, Virustotal api and Auth0 for authentication.",
+      "A web app built collaboratively with @alessandromaone and @sergioiovine to scan files or URLs for viruses. Developed using Ruby on Rails, TailwindCSS, the VirusTotal API, and Auth0 for authentication.",
      
     },
   {
@@ -71,6 +70,6 @@ export const workItems = [
     github: "https://github.com/nannipy/agricolapernazza",
     link: "https://agricolapernazza.vercel.app/",
     description:
-      "a web app for Agricola Pernazza, a farm located in Amelia, Italy. You can find information about the farm, the animals, the activities and the events and order products."
+      "This is the website for all the products my family makes from the hills of Umbria. Cool project I enjoyed building. You can find our EVO oil and our incredible pasta made with ancient wheat varieties."
     },
 ] satisfies ExperienceItem[];

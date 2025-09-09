@@ -105,7 +105,7 @@ export default function ProjectPage() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isModalOpen, project?.screenshots, selectedImage]);
+  }, [isModalOpen, project?.screenshots, selectedImage,]);
 
   const handleNextImage = () => {
     if (project?.screenshots && selectedImage) {

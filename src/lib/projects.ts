@@ -15,7 +15,7 @@ export const projectItems = [
       "/SFT/SFT_sponsor.png",
     ],
     description:
-      "Website for the Sapienza foiling team, a student association at the University of Rome. You can find information about the team, the activities and the events"
+      "Official website for Sapienza Foiling Team: a modern platform with blog, admin area to share news and grow the sailing community."
   },
   {
     id: "ollapy",
@@ -53,7 +53,7 @@ export const projectItems = [
       "/plc/Contatti.png",
     ],
     description:
-      "a web app to search for Parco la Cascina, a farm located near Varese, Italy. You can find information about the farm, the animals, the activities and the events and order products"
+      "An exciting web app to explore Parco la Cascina, a beautiful farm near Varese, Italy! Dive into the world of the farm:  discover fun activities and events, and easily order fresh products online."
     },
     {
       id: "youtube-downloader-app",
@@ -67,7 +67,7 @@ export const projectItems = [
         "/YT-Downloader/successful.png",
       ],
         description:
-        "YouTube Downloader is a desktop application for downloading easily and efficiently video and audio from YouTube"
+        "My uncle asked me if i could make an app for his pc to download easily yt videos without going through strange websites full of ads, (oh he is a noob so ui > terminal ) so i made this.  hope you like it "
       }
 
     
