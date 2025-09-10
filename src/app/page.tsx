@@ -113,35 +113,36 @@ function ExperienceSection({
           href={isProject ? `/projects/${item.id}` : `/work/${item.id}`}
           className="block relative transform transition-all duration-300 hover:translate-x-2"
         >
-          <div className="min-h-[140px] p-6 rounded-lg transition-all duration-300 bg-neutral-900/50 hover:bg-neutral-600/30">
-            <div className="flex justify-between items-start gap-6">
+            <div className="min-h-[140px] p-6 rounded-lg transition-all duration-300 bg-neutral-900/50 hover:bg-neutral-600/30">
+            <div className="flex flex-col gap-4">
               <div className="font-medium group transition-all duration-300 hover:text-white">
-                <span className="relative">
+                <span className="relative inline-block group">
                   {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute left-0 bottom-0 block h-0.5 w-full bg-white transition-transform duration-300 scale-x-0 origin-left group-hover:scale-x-100"></span>
                 </span>
               </div>
-              
-              {item.github && (
-                <Link
-                  href={item.github}
-                  onClick={(e) => e.stopPropagation()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center transition-all duration-300 hover:text-white"
-                >
-                  <GithubIcon />
-                  <p className="ml-2 h-7 relative">
-                    git
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-                  </p>
-                </Link>
-              )}
             </div>
             <p className="mt-2 text-neutral-700 dark:text-neutral-300">
               {item.description}
             </p>
+
+            {item.github && (
+              <Link
+                href={item.github}
+                onClick={(e) => e.stopPropagation()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center transition-all duration-300 hover:text-white mt-2 justify-end"
+              >
+                <GithubIcon />
+                <p className="ml-2 h-7 relative">
+                git
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                </p>
+              </Link>
+              )}
           </div>
+          
           
           {index !== items.length - 1 && <div className="mt-6"></div>}
         </Link>
