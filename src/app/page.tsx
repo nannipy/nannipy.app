@@ -195,7 +195,9 @@ export default function Home() {
                 { href: "https://www.linkedin.com/in/giovannibpernazza", text: "linkedin" },
                 { href: "https://github.com/nannipy", text: "github" },
                 { href: "https://www.instagram.com/nanni.py/", text: "instagram" },
-                { href: "https://docs.google.com/document/d/1vAQ1L3jJVlAHoDqd7wD-Hajjb4rq8G9MCdZC5TdDHrA/edit?tab=t.0", text: "CV" }
+                { href: "https://docs.google.com/document/d/1vAQ1L3jJVlAHoDqd7wD-Hajjb4rq8G9MCdZC5TdDHrA/edit?tab=t.0", text: "CV" },
+                { href: "https://cal.com/giovannipernazza/30min", text: "Book a Call" }
+                
               ].map((link, index) => (
                 <li key={index}>
                   <a
@@ -214,7 +216,6 @@ export default function Home() {
               ))}
             </ul>
           </div>
-
 
           <div className="p-6 rounded-lg bg-neutral-900/50">
             <div>

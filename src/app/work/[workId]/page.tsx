@@ -2,7 +2,7 @@
 
 import { workItems } from "../../../lib/work";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Octokit } from "octokit";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
@@ -88,6 +88,20 @@ export default function WorkPage() {
   const [selectedImage, setSelectedImage] = useState<{ src: string; index: number } | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleNextImage = useCallback(() => {
+    if (work?.screenshots && selectedImage) {
+      const nextIndex = (selectedImage.index + 1) % work.screenshots.length;
+      setSelectedImage({ src: work.screenshots[nextIndex], index: nextIndex });
+    }
+  }, [work?.screenshots, selectedImage]);
+
+  const handlePrevImage = useCallback(() => {
+    if (work?.screenshots && selectedImage) {
+      const prevIndex = (selectedImage.index - 1 + work.screenshots.length) % work.screenshots.length;
+      setSelectedImage({ src: work.screenshots[prevIndex], index: prevIndex });
+    }
+  }, [work?.screenshots, selectedImage]);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isModalOpen || !work?.screenshots) return;
@@ -105,21 +119,7 @@ export default function WorkPage() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isModalOpen, work?.screenshots, selectedImage]);
-
-  const handleNextImage = () => {
-    if (work?.screenshots && selectedImage) {
-      const nextIndex = (selectedImage.index + 1) % work.screenshots.length;
-      setSelectedImage({ src: work.screenshots[nextIndex], index: nextIndex });
-    }
-  };
-
-  const handlePrevImage = () => {
-    if (work?.screenshots && selectedImage) {
-      const prevIndex = (selectedImage.index - 1 + work.screenshots.length) % work.screenshots.length;
-      setSelectedImage({ src: work.screenshots[prevIndex], index: prevIndex });
-    }
-  };
+  }, [isModalOpen, work?.screenshots, handleNextImage, handlePrevImage]);
 
   if (!work) {
     return <div>Work not found</div>;

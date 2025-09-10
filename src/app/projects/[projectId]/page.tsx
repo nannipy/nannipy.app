@@ -3,12 +3,13 @@
 import { projectItems } from "../../../lib/projects";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback} from "react";
 import { Octokit } from "octokit";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import DOMPurify from "dompurify";
 import Image from "next/image";
+
 
 function UpRightArrowIcon() {
   return (
@@ -88,6 +89,21 @@ export default function ProjectPage() {
   const [selectedImage, setSelectedImage] = useState<{ src: string; index: number } | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleNextImage = useCallback(() => {
+    if (project?.screenshots && selectedImage) {
+      const nextIndex = (selectedImage.index + 1) % project.screenshots.length;
+      setSelectedImage({ src: project.screenshots[nextIndex], index: nextIndex });
+    }
+  }, [project?.screenshots, selectedImage]);
+
+  const handlePrevImage = useCallback(() => {
+    if (project?.screenshots && selectedImage) {
+      const prevIndex = (selectedImage.index - 1 + project.screenshots.length) % project.screenshots.length;
+      setSelectedImage({ src: project.screenshots[prevIndex], index: prevIndex });
+    }
+  }, [project?.screenshots, selectedImage]);
+
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isModalOpen || !project?.screenshots) return;
@@ -105,21 +121,9 @@ export default function ProjectPage() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isModalOpen, project?.screenshots, selectedImage,]);
+  }, [isModalOpen, project?.screenshots, handleNextImage, handlePrevImage]);
 
-  const handleNextImage = () => {
-    if (project?.screenshots && selectedImage) {
-      const nextIndex = (selectedImage.index + 1) % project.screenshots.length;
-      setSelectedImage({ src: project.screenshots[nextIndex], index: nextIndex });
-    }
-  };
-
-  const handlePrevImage = () => {
-    if (project?.screenshots && selectedImage) {
-      const prevIndex = (selectedImage.index - 1 + project.screenshots.length) % project.screenshots.length;
-      setSelectedImage({ src: project.screenshots[prevIndex], index: prevIndex });
-    }
-  };
+  
 
   if (!project) {
     return <div>Project not found</div>;
