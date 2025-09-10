@@ -174,16 +174,16 @@ export default function ProjectPage() {
                   key={index}
                   className="relative w-full h-64 rounded-lg overflow-hidden shadow-lg bg-black cursor-pointer"
                   onClick={() => {
-                    setSelectedImage({ src: screenshot, index });
-                    setIsModalOpen(true);
+                  setSelectedImage({ src: screenshot, index });
+                  setIsModalOpen(true);
                   }}
                 >
                   <Image
-                    src={screenshot}
-                    alt={`Screenshot ${index + 1}`}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    className="rounded-lg"
+                  src={screenshot}
+                  alt={`Screenshot ${index + 1}`}
+                  fill
+                  style={{ objectFit: project.id === "adm-sport-and-nutrition" ? "contain" : "cover" }}
+                  className="rounded-lg"
                   />
                 </div>
               ))}

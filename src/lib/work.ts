@@ -29,9 +29,7 @@ export const workItems = [
         "/Data4Run/performance.png",
         "/Data4Run/trends.png",
         "/Data4Run/settings.png",
-        "/Data4Run/compact-mode.png",
         "/Data4Run/sync_page.png",
-        "/Data4Run/loading.png",
 
       ],
       description: 
@@ -49,7 +47,6 @@ export const workItems = [
       "/Virusscanner/comments.png",
       "/Virusscanner/security-guide.png",
       "/Virusscanner/tech-stack.png",
-      "/Virusscanner/login-light.png",
     ],
     description:
       "A web app built collaboratively with @alessandromaone and @sergioiovine to scan files or URLs for viruses. Developed using Ruby on Rails, TailwindCSS, the VirusTotal API, and Auth0 for authentication.",

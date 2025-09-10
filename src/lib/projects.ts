@@ -38,6 +38,13 @@ export const projectItems = [
     name: "ADM sport and nutrition",
     github: "https://github.com/nannipy/adm",
     link: "https://adm-sportandnutrition.vercel.app/",
+    screenshots: [
+      "/adm/calendario.png",
+      "/adm/scheda.png",
+      "/adm/manuale.png",
+      "/adm/chat-coach.png",
+      "/adm/account-info.png",
+    ],
     description:
       "a web app for a personal trainer, built for gym trainings and nutrition monitoring with a simple and clean UI"
     },
