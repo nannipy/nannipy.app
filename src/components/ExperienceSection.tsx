@@ -14,7 +14,7 @@ export default function ExperienceSection({
         <Link
           key={index}
           href={`/projects/${item.id}`}
-          className="block relative transform transition-all duration-300 hover:translate-x-2"
+          className="block relative transform transition-all duration-300 hover:translate-x-1"
         >
             <div className="min-h-[140px] p-6 rounded-lg transition-all duration-300 card">
             <div className="flex flex-col gap-4">
