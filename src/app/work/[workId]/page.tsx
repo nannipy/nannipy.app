@@ -241,7 +241,7 @@ export default function WorkPage() {
             </div>
           </div>
         )}
-        <div className="max-w-full prose dark:prose-invert mt-8 p-6 rounded-lg card markdown-body">
+        <div className="max-w-full prose dark:prose-invert mt-8 p-6 rounded-lg card markdown-body" style={{ overflowX: 'auto' }}>
           {loading ? (
             <p>Loading README...</p>
           ) : (
