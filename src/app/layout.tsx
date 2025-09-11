@@ -1,7 +1,7 @@
 'use client'
 import '../styles/globals.css';
 import type { ReactNode } from 'react';
-import Footer from '../components/Footer.jsx';
+import Footer from '../components/Footer';
 import { Analytics } from '@vercel/analytics/react';
 import { Providers } from '../components/Providers';
 

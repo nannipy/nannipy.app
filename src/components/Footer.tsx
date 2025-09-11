@@ -1,10 +1,19 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { useTheme } from 'next-themes';
+
+interface LogoPosition {
+  x: number;
+  y: number;
+  dx: number;
+  dy: number;
+  size: number;
+}
 
 const Footer = () => {
   const [showAnimation, setShowAnimation] = useState(false);
-  const [logoPositions, setLogoPositions] = useState([
+  const [logoPositions, setLogoPositions] = useState<LogoPosition[]>([
     { x: 0.1, y: 0.1, dx: 1, dy: 1.5, size: 150 },
     { x: 0.3, y: 0.2, dx: -1.5, dy: 1.2, size: 150 },
     { x: 0.5, y: 0.3, dx: 1.2, dy: -1.8, size: 150 },
@@ -13,6 +22,12 @@ const Footer = () => {
     { x: 0.6, y: 0.2, dx: 1.2, dy: -1.8, size: 150 }
   ]);
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Initialize window size after component mounts
   useEffect(() => {
@@ -53,22 +68,24 @@ const Footer = () => {
   useEffect(() => {
     if (!windowSize.width || !windowSize.height) return; // Skip animation if window size not set
 
-    let animationFrame;
+    let animationFrame: number;
 
     const animateLogos = () => {
       setLogoPositions(prevPositions =>
         prevPositions.map(pos => {
-          let { x, y, dx, dy, size } = pos;
+          const { x, y, dx, dy, size } = pos;
 
           // Update positions
-          x += dx * 0.005;
-          y += dy * 0.005;
+          const newX = x + dx * 0.005;
+          const newY = y + dy * 0.005;
 
           // Bounce off the edges
-          if (x < 0 || x > 1 - size / windowSize.width) dx = -dx;
-          if (y < 0 || y > 1 - size / windowSize.height) dy = -dy;
+          let newDx = dx;
+          let newDy = dy;
+          if (newX < 0 || newX > 1 - size / windowSize.width) newDx = -dx;
+          if (newY < 0 || newY > 1 - size / windowSize.height) newDy = -dy;
 
-          return { x, y, dx, dy, size };
+          return { x: newX, y: newY, dx: newDx, dy: newDy, size };
         })
       );
       animationFrame = requestAnimationFrame(animateLogos);
@@ -78,14 +95,20 @@ const Footer = () => {
       animationFrame = requestAnimationFrame(animateLogos);
     }
 
-    return () => cancelAnimationFrame(typeof animationFrame === 'number' ? animationFrame : 0);
+    return () => cancelAnimationFrame(animationFrame);
   }, [showAnimation, windowSize]);
 
+  if (!mounted) {
+    return null;
+  }
+
+  const logoSrc = '/madeLogos.png';
+
   return (
-    <div className="flex justify-center bg-[#111111]">
+    <div className={`flex justify-center ${theme === 'dark' ? 'bg-[#111111]' : 'bg-gray-200'}`}>
       <div className="px-16  justify-center items-center">
         <a onClick={handleLogoClick()}>
-          <Image src="/madeLogos.png" alt="logo" width={100} height={100} />
+          <Image src={logoSrc} alt="logo" width={100} height={100} />
         </a>
       </div>
       {showAnimation && windowSize.width > 0 && (
@@ -107,7 +130,7 @@ const Footer = () => {
                 height: `${pos.size}px`
               }}
             >
-              <Image src="/madeLogos.png" alt="logo" width={pos.size} height={pos.size} />
+              <Image src={logoSrc} alt="logo" width={pos.size} height={pos.size} />
             </div>
           ))}
         </div>
