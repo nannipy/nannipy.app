@@ -29,11 +29,11 @@ html {
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    @apply bg-white text-black;
+    @apply bg-background text-text;
   }
 
   .dark body {
-    @apply bg-[#111111] text-white;
+    @apply bg-background-dark text-text-dark;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -41,27 +41,27 @@ html {
   }
 
   .dark .card {
-    background-color: rgba(23, 23, 23, 0.502);
+    background-color: theme('colors.card.dark');
   }
 
   .dark .card:hover {
-    background-color: rgba(38, 38, 38, 0.5);
+    background-color: theme('colors.card-hover.dark');
   }
 
   .card {
-    background-color: rgba(233, 233, 233, 0.5);
+    background-color: theme('colors.card.DEFAULT');
   }
 
   .card:hover {
-    background-color: rgba(211, 211, 211, 0.5);
+    background-color: theme('colors.card-hover.DEFAULT');
   }
 
   .dark .link-underline::after {
-    background-color: white;
+    background-color: theme('colors.text.dark');
   }
 
   .link-underline::after {
-    background-color: black;
+   background-color: theme('colors.text.DEFAULT');
   }
 }
 

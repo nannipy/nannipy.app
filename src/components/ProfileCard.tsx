@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import Card from './ui/Card';
-import Link from './ui/Link';
+import Link from 'next/link'
 import LocationIcon from './icons/LocationIcon';
 import UpRightArrowIcon from './icons/UpRightArrowIcon';
 import WorkIcon from './icons/WorkIcon';
@@ -62,7 +62,7 @@ export default function ProfileCard() {
           I love blending clean design with seamless functionality, always striving for intuitive user experiences. Beyond coding, I&apos;m a tech enthusiast,
           a design lover, and a YouTube video binge-watcher, always exploring new trends.
           <Link
-            href="https.strava.com/athletes/151899362"
+            href="https://strava.com/athletes/151899362"
             className="underline"
             target="_blank"
             rel="noopener noreferrer"
