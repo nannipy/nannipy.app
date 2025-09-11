@@ -9,6 +9,8 @@ import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import DOMPurify from "dompurify";
 import Image from "next/image";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
+import { useSwipeable } from "react-swipeable";
 
 
 function UpRightArrowIcon() {
@@ -109,7 +111,7 @@ export default function ProjectPage() {
       if (!isModalOpen || !project?.screenshots) return;
 
       if (e.key === "ArrowLeft") {
-        handlePrevImage();
+        handlePrevImage(); 
       } else if (e.key === "ArrowRight") {
         handleNextImage();
       } else if (e.key === "Escape") {
@@ -123,6 +125,12 @@ export default function ProjectPage() {
     };
   }, [isModalOpen, project?.screenshots, handleNextImage, handlePrevImage]);
 
+  const handlers = useSwipeable({
+      onSwipedLeft: () => handleNextImage(),
+      onSwipedRight: () => handlePrevImage(),
+      trackMouse: true
+    });
+
   
 
   if (!project) {
@@ -130,9 +138,9 @@ export default function ProjectPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#111111] p-2 md:p-12 lg:p-16">
+    <main className="min-h-screen p-2 md:p-12 lg:p-16">
       <div className="max-w-full mx-auto">
-        <div className="p-6 rounded-lg bg-neutral-900/50">
+        <div className="p-6 rounded-lg card">
           <div className="flex flex-col md:flex-row md:justify-between md:items-start md:gap-6">
             <h1 className="text-2xl font-bold tracking-tighter">
               {project.name}
@@ -142,24 +150,22 @@ export default function ProjectPage() {
                 <Link
                   href={project.link}
                   target="_blank"
-                  className="group flex items-center transition-all duration-300 hover:text-white"
-                >
+                  className="group flex items-center transition-all duration-300">
                   <UpRightArrowIcon />
                   <p className="ml-2 h-7 relative">
                     Live
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></span>
                   </p>
                 </Link>
               )}
               {project.github && (
                 <Link
                   href={project.github}
-                  className="group flex items-center transition-all duration-300 hover:text-white"
-                >
+                  className="group flex items-center transition-all duration-300">
                   <GithubIcon />
                   <p className="ml-2 h-7 relative">
                     GitHub
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></span>
                   </p>
                 </Link>
               )}
@@ -170,7 +176,7 @@ export default function ProjectPage() {
           </p>
         </div>
           {project.screenshots && project.screenshots.length > 0 && (
-          <div className="mt-8 p-6 rounded-lg bg-neutral-900/50">
+          <div className="mt-8 p-6 rounded-lg card">
             <h2 className="text-xl font-bold tracking-tighter mb-4">Screenshots</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {project.screenshots.map((screenshot, index) => (
@@ -200,6 +206,7 @@ export default function ProjectPage() {
           <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80"
             onClick={() => setIsModalOpen(false)}
+            {...handlers}
           >
             <div className="relative max-w-screen-lg max-h-screen-lg p-4" onClick={(e) => e.stopPropagation()}>
               <button
@@ -220,13 +227,13 @@ export default function ProjectPage() {
               {project.screenshots && project.screenshots.length > 1 && (
                 <>
                   <button
-                    className="absolute -left-12 top-1/2 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center text-black text-2xl font-bold opacity-75 hover:opacity-100"
+                    className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center text-black text-2xl font-bold opacity-75 hover:opacity-100 -translate-x-12 md:-translate-x-16"
                     onClick={handlePrevImage}
                   >
                     &#8249;
                   </button>
                   <button
-                    className="absolute -right-12 top-1/2 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center text-black text-2xl font-bold opacity-75 hover:opacity-100"
+                    className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center text-black text-2xl font-bold opacity-75 hover:opacity-100 translate-x-12 md:translate-x-16"
                     onClick={handleNextImage}
                   >
                     &#8250;
@@ -236,7 +243,7 @@ export default function ProjectPage() {
             </div>
           </div>
         )}
-        <div className="max-w-full prose dark:prose-invert mt-8 p-6 rounded-lg bg-neutral-900/50 markdown-body">
+        <div className="max-w-full prose dark:prose-invert mt-8 p-6 rounded-lg card markdown-body">
           {loading ? (
             <p>Loading README...</p>
           ) : (
@@ -244,7 +251,7 @@ export default function ProjectPage() {
           )}
         </div>
         <div className="mt-8">
-          <Link href="/" className="group flex items-center transition-all duration-300 hover:text-white">
+          <Link href="/" className="group flex items-center transition-all duration-300">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -261,10 +268,13 @@ export default function ProjectPage() {
             </svg>
             <p className="ml-2 h-7 relative">
               Back to Home
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></span>
             </p>
           </Link>
         </div>
+      </div>
+      <div className="fixed bottom-4 right-4">
+        <ThemeSwitcher />
       </div>
     </main>
   );

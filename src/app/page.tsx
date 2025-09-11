@@ -5,6 +5,7 @@ import { projectItems } from "../lib/projects.ts";
 import { workItems } from "../lib/work.ts";
 import Link from 'next/link';
 import Image from 'next/image';
+import ThemeSwitcher from '../components/ThemeSwitcher';
 
 
 function UpRightArrowIcon() {
@@ -113,12 +114,12 @@ function ExperienceSection({
           href={isProject ? `/projects/${item.id}` : `/work/${item.id}`}
           className="block relative transform transition-all duration-300 hover:translate-x-2"
         >
-            <div className="min-h-[140px] p-6 rounded-lg transition-all duration-300 bg-neutral-900/50 hover:bg-neutral-600/30">
+            <div className="min-h-[140px] p-6 rounded-lg transition-all duration-300 card">
             <div className="flex flex-col gap-4">
-              <div className="font-medium group transition-all duration-300 hover:text-white">
+              <div className="font-medium group transition-all duration-300">
                 <span className="relative inline-block group">
                   {item.name}
-                  <span className="absolute left-0 bottom-0 block h-0.5 w-full bg-white transition-transform duration-300 scale-x-0 origin-left group-hover:scale-x-100"></span>
+                  <span className="absolute left-0 bottom-0 block h-0.5 w-full bg-black dark:bg-white transition-transform duration-300 scale-x-0 origin-left group-hover:scale-x-100"></span>
                 </span>
               </div>
             </div>
@@ -132,12 +133,12 @@ function ExperienceSection({
                 onClick={(e) => e.stopPropagation()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center transition-all duration-300 hover:text-white mt-2 justify-end"
+                className="group flex items-center transition-all duration-300 mt-2 justify-end"
               >
                 <GithubIcon />
                 <p className="ml-2 h-7 relative">
                 git
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></span>
                 </p>
               </Link>
               )}
@@ -162,34 +163,34 @@ export default function Home() {
 
   return (
     
-    <main className="min-h-screen bg-[#111111] p-2 md:p-12 lg:p-16">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8">
-        <div className="md:col-span-4 space-y-6 ">
-          <div className="p-6 rounded-lg bg-neutral-900/50">
-            <h1 className="text-2xl font-bold tracking-tighter flex items-center gap-6">
-            <Image
-                src="/logo-en2.png"
-                width={60}
-                height={60}
-                alt="Nannipy logo"
-              />
-              <div className="flex-grow">
-                Giovanni Battista Pernazza
-              </div>
-              
-            </h1>
+    <main className="min-h-screen p-2 md:p-12 lg:p-16">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+          <div className="md:col-span-4 space-y-6 ">
+            <div className="p-6 rounded-lg card">
+              <h1 className="text-2xl font-bold tracking-tighter flex items-center gap-6">
+              <Image
+                  src="/logo-en2.png"
+                  width={60}
+                  height={60}
+                  alt="Nannipy logo"
+                />
+                <div className="flex-grow">
+                  Giovanni Battista Pernazza
+                </div>
+              </h1>
             <div className="space-y-4 mt-3 ">
-              <div className="group flex items-center gap-2 text-neutral-400 hover:text-white transition-colors">
+              <div className="group flex items-center gap-2 text-black dark:text-neutral-400 transition-colors">
                 <LocationIcon />
                 <p>Rome, Italy</p>
               </div>
-              <div className="group flex items-center  gap-2 text-neutral-400 hover:text-white transition-colors">
+              <div className="group flex items-center  gap-2 text-black dark:text-neutral-400 transition-colors">
                 <WorkIcon />
                 <p>SWE</p>
               </div>
             </div>
 
-            <ul className="flex flex-wrap gap-6 mt-2  text-neutral-400">
+            <ul className="flex flex-wrap gap-6 mt-2  text-black dark:text-neutral-400">
               {[
                 { href: "mailto:gb.pernazza@gmail.com", text: "email" },
                 { href: "https://www.linkedin.com/in/giovannibpernazza", text: "linkedin" },
@@ -198,26 +199,27 @@ export default function Home() {
                 { href: "https://docs.google.com/document/d/1vAQ1L3jJVlAHoDqd7wD-Hajjb4rq8G9MCdZC5TdDHrA/edit?tab=t.0", text: "CV" },
                 { href: "https://cal.com/giovannipernazza/30min", text: "Book a Call" }
                 
+                
               ].map((link, index) => (
                 <li key={index}>
                   <a
-                    className="group flex items-center hover:text-white transition-colors"
+                    className="group flex items-center transition-colors"
                     rel="noopener noreferrer"
                     target="_blank"
                     href={link.href}
                   >
                     <span className="relative">
                       {link.text}
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
+                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black dark:bg-white transition-all group-hover:w-full"></span>
                     </span>
                     <UpRightArrowIcon />
                   </a>
                 </li>
               ))}
-            </ul>
+            </ul>  
           </div>
 
-          <div className="p-6 rounded-lg bg-neutral-900/50">
+          <div className="p-6 rounded-lg card">
             <div>
               I&apos;m a software engineer passionate about building sleek, high-performance web applications with Next.js and TypeScript.
               I love blending clean design with seamless functionality, always striving for intuitive user experiences. Beyond coding, I&apos;m a tech enthusiast,
@@ -235,13 +237,17 @@ export default function Home() {
         </div>
 
         <div className="md:col-span-8 ">
-          <h2 className=" p-3 rounded-lg bg-neutral-900/50 text-2xl font-bold text-center ">my projects</h2>    
+          <h2 className=" p-3 rounded-lg card text-2xl font-bold text-center ">my projects</h2>    
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-6">
             <ExperienceSection items={projectItems} isProject={true} />
             <ExperienceSection items={workItems} />
           </div>
         </div>
       </div>
+    </div>
+    <div className="fixed bottom-4 right-4">
+      <ThemeSwitcher />
+    </div>
     </main>
   );
 }

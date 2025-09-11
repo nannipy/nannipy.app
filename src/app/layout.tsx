@@ -3,16 +3,13 @@ import '../styles/globals.css';
 import type { ReactNode } from 'react';
 import Footer from '../components/Footer.jsx';
 import { Analytics } from '@vercel/analytics/react';
+import { Providers } from '../components/Providers';
 
 interface RootLayoutProps {
   children: ReactNode;
 }
 
-
-
 export default function RootLayout({ children }: RootLayoutProps) {
-  
-
   return (
     <html lang="en" className="text-xl">
       <head>
@@ -20,12 +17,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body suppressHydrationWarning className="min-h-screen flex flex-col">
-        
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Analytics />
-        <Footer />
+        <Providers>
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Analytics />
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
