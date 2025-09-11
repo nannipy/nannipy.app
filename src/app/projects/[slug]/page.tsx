@@ -1,3 +1,4 @@
+
 "use client";
 
 import { projectItems } from "../../../lib/projects";
@@ -11,52 +12,15 @@ import DOMPurify from "dompurify";
 import Image from "next/image";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { useSwipeable } from "react-swipeable";
+import GithubIcon from "@/components/icons/GithubIcon";
+import UpRightArrowIcon from "@/components/icons/UpRightArrowIcon";
 
-
-function UpRightArrowIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="h-5 w-5 transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-    >
-      <path d="M7 7h10v10" />
-      <path d="M7 17 17 7" />
-    </svg>
-  );
-}
-
-function GithubIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="h-5 w-5 transition-transform duration-300 group-hover:scale-110"
-    >
-      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-    </svg>
-  );
-}
 
 export default function ProjectPage() {
   const params = useParams();
-  const projectId = params?.projectId;
+  const slug = params?.slug;
   const project = projectItems.find(
-    (p) => p.id === projectId
+    (p) => p.id === slug
   );
   const [readme, setReadme] = useState("");
   const [loading, setLoading] = useState(true);
