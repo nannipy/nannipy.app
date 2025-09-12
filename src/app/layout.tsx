@@ -11,12 +11,12 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className="text-xl">
+    <html>
       <head>
         <title>Nannipy</title>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body suppressHydrationWarning className="min-h-screen flex flex-col">
+      <body suppressHydrationWarning className="min-h-screen flex flex-col grainy">
         <Providers>
           <main className="flex-grow">
             {children}
