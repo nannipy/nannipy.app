@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { useTheme } from 'next-themes';
 
 interface LogoPosition {
   x: number;
@@ -22,12 +21,6 @@ const Footer = () => {
     { x: 0.6, y: 0.2, dx: 1.2, dy: -1.8, size: 150 }
   ]);
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
-  const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Initialize window size after component mounts
   useEffect(() => {
@@ -98,14 +91,10 @@ const Footer = () => {
     return () => cancelAnimationFrame(animationFrame);
   }, [showAnimation, windowSize]);
 
-  if (!mounted) {
-    return null;
-  }
-
   const logoSrc = '/madeLogos.png';
 
   return (
-    <div className={`flex justify-center ${theme === 'dark' ? 'bg-[#111111]' : 'bg-gray-200'}`}>
+    <div className="flex justify-center bg-gray-200 dark:bg-[#111111]">
       <div className="px-16  justify-center items-center">
         <a onClick={handleLogoClick()}>
           <Image src={logoSrc} alt="logo" width={100} height={100} />
@@ -113,7 +102,7 @@ const Footer = () => {
       </div>
       {showAnimation && windowSize.width > 0 && (
         <div
-          className="fixed inset-0 bg-black flex items-center justify-center z-50 overflow-hidden"
+          className="fixed inset-0 bg-gray-200 dark:bg-black flex items-center justify-center z-50 overflow-hidden"
           style={{
             width: windowSize.width,
             height: windowSize.height
