@@ -110,17 +110,17 @@ export const projectItems = [
       
     },
     {
-      id: "data4run",
-      name: "Data4Run",
-      link: "https://github.com/nannipy/Data4Run.git",
-      github: "https://github.com/nannipy/Data4Run.git",
+      id: "foxrun",
+      name: "foxrun",
+      link: "https://github.com/nannipy/foxrun.git",
+      github: "https://github.com/nannipy/foxrun.git",
       screenshots: [
-        "/Data4Run/dashboard.png",
-        "/Data4Run/activities.png",
-        "/Data4Run/performance.png",
-        "/Data4Run/trends.png",
-        "/Data4Run/settings.png",
-        "/Data4Run/sync_page.png",
+        "/foxrun/dashboard.png",
+        "/foxrun/activities.png",
+        "/foxrun/performance.png",
+        "/foxrun/trends.png",
+        "/foxrun/settings.png",
+        "/foxrun/sync_page.png",
 
       ],
       description: 
