@@ -106,9 +106,9 @@ export default function ProjectPage() {
       <div className="max-w-full mx-auto">
         <div className="p-6 rounded-lg card">
           <div className="flex flex-col md:flex-row md:justify-between md:items-start md:gap-6">
-            <h1 className="text-2xl font-bold tracking-tighter">
-              {project.name}
-            </h1>
+              <h1 className="text-2xl font-bold tracking-tighter">
+                {project.name}
+              </h1>
             <div className="flex mt-4 md:mt-0 gap-4">
               {project.link && (
                 <Link
@@ -172,7 +172,7 @@ export default function ProjectPage() {
             onClick={() => setIsModalOpen(false)}
             {...handlers}
           >
-            <div className="relative max-w-screen-lg max-h-screen-lg p-4" onClick={(e) => e.stopPropagation()}>
+            <div className="relative flex max-h-screen max-w-screen-lg items-center justify-center p-4" onClick={(e) => e.stopPropagation()}>  
               <button
                 className="absolute -top-8 right-0 bg-white rounded-full w-8 h-8 flex items-center justify-center text-black text-xl font-bold z-50"
                 onClick={() => setIsModalOpen(false)}

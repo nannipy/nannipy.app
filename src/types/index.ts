@@ -6,4 +6,5 @@ export type ExperienceItem = {
   github: string;
   description: string;
   screenshots?: string[];
+  logo?: string;
 };

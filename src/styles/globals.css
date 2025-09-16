@@ -3,26 +3,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-
-@font-face {
-  font-family: 'Geist';
-  src: url('/fonts/Geist-Bold.otf') format('opentype');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GeistMono';
-  src: url('/fonts/GeistMono-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 html {
   min-width: 360px;
-  font-family: 'GeistMono', monospace;
+  font-family: var(--font-geist-mono), monospace;
 }
 
 @layer base {
@@ -37,7 +20,7 @@ html {
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Geist', sans-serif;
+    font-family: var(--font-geist), sans-serif;
   }
 
   .dark .card {

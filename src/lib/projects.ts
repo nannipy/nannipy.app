@@ -4,6 +4,7 @@ export const projectItems = [
   {
     id: "sapienza-foiling-team",
     name: "SFT Website",
+    logo: "/SFT/logo.jpg",
     github: "https://github.com/nannipy/SapienzaFoilingTeam",
     link: "https://sapienzafoilingteam.vercel.app",
     screenshots: [
@@ -20,6 +21,7 @@ export const projectItems = [
   {
     id: "ollapy",
     name: "Ollapy",
+    logo: "/ollapy/logo.jpg",
     github: "https://github.com/nannipy/ollapy.git",
     link: "https://github.com/nannipy/ollapy.git",
     screenshots: [
@@ -59,12 +61,14 @@ export const projectItems = [
       "/plc/Ordine.png",
       "/plc/Contatti.png",
     ],
+    logo: "/plc/logo.jpg",
     description:
       "An exciting web app to explore Parco la Cascina, a beautiful farm near Varese, Italy! Dive into the world of the farm:  discover fun activities and events, and easily order fresh products online."
   },
   {
     id: "youtube-downloader-app",
     name: "Youtube Downloader App",
+    logo: "/YT-Downloader/app.png",
     github: "https://github.com/nannipy/yt-dl",
     link: "https://github.com/nannipy/yt-dl",
     screenshots: [
@@ -81,6 +85,7 @@ export const projectItems = [
     name: "Recup",
     github: "https://github.com/nannipy/Recup.git",
     link: "https://github.com/nannipy/Recup.git",
+    logo:"/Recup/logo.jpg",
     screenshots: [
       "/Recup/Dashboard.png",
       "/Recup/Dashboard_2.png",
@@ -90,11 +95,12 @@ export const projectItems = [
       "/Recup/Loading.png",
     ],
     description:
-      " Recup is a beautiful NGO project I’m collaborating with, where I’m building a personalized CRM to manage their data and  make their work more efficient, organized, and even enjoyable."     
+      " Recup is a beautiful NGO project I’m collaborating with, where I’m building a personalized CRM to manage their data and  make their work more efficient, organized, and even enjoyable."
     },
     {
     id: "virus-scanner",
     name: "Virus Scanner",
+    logo: "/Virusscanner/logo.jpg",
     github: "https://github.com/AlexGallo8/VirusScanner.git",
     link: "https://github.com/AlexGallo8/VirusScanner.git",
     screenshots: [
@@ -107,11 +113,12 @@ export const projectItems = [
     ],
     description:
       "A web app built collaboratively with @alessandromaone and @sergioiovine to scan files or URLs for viruses. Developed using Ruby on Rails, TailwindCSS, the VirusTotal API, and Auth0 for authentication.",
-      
+
     },
     {
       id: "foxrun",
-      name: "foxrun",
+      name: "Foxrun",
+      logo: "/foxrun/logo.jpg",
       link: "https://github.com/nannipy/foxrun.git",
       github: "https://github.com/nannipy/foxrun.git",
       screenshots: [
@@ -123,12 +130,13 @@ export const projectItems = [
         "/foxrun/sync_page.png",
 
       ],
-      description: 
+      description:
         "I want to build my ultimate, privacy-oriented data center to collect and analyze all my activity data, learning and having fun along the way. This web application lets you view and analyze running, cycling, and tennis performance using Strava data and GPX files."
     },
     {
       id: "agricola-pernazza",
       name: "Agricola Pernazza",
+      logo: "/ap/logo.jpg",
       github: "https://github.com/nannipy/agricolapernazza",
       link: "https://agricolapernazza.vercel.app/",
       description:
@@ -137,6 +145,7 @@ export const projectItems = [
       {
       id: "portfolio-website",
       name: "Portfolio website",
+      logo: "/logo.png",
       github: "https://github.com/nannipy/nanni.com",
       link: "/",
       description:

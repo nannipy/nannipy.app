@@ -16,8 +16,9 @@ export default function ProfileCard() {
             width={60}
             height={60}
             alt="Nannipy logo"
+            priority
           />
-          <div className="flex-grow">
+          <div className="flex-grow text-2xl font-bold">
             Giovanni Battista Pernazza
           </div>
         </h1>

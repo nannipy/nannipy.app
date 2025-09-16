@@ -18,6 +18,7 @@ const ThemeSwitcher = () => {
 
   return (
     <button
+      aria-label="Switch Theme"
       className="w-fit p-2 rounded-xl hover:scale-110 active:scale-100 duration-200 bg-[#F4F4F4] dark:bg-[#17171780]"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
