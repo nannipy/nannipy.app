@@ -96,9 +96,9 @@ const Footer = () => {
   return (
     <div className="flex justify-center bg-gray-200 dark:bg-[#111111]">
       <div className="px-16  justify-center items-center">
-        <a onClick={handleLogoClick()}>
+        <button onClick={handleLogoClick()}>
           <Image src={logoSrc} alt="logo" width={100} height={100} priority />
-        </a>
+        </button>
       </div>
       {showAnimation && windowSize.width > 0 && (
         <div
