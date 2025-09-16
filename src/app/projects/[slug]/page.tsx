@@ -14,6 +14,7 @@ import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { useSwipeable } from "react-swipeable";
 import GithubIcon from "@/components/icons/GithubIcon";
 import UpRightArrowIcon from "@/components/icons/UpRightArrowIcon";
+import "../../../styles/shiki.css";
 
 
 export default function ProjectPage() {

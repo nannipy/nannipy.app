@@ -1,10 +1,14 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
 import ThemeSwitcher from '../components/ThemeSwitcher';
 import ProfileCard from '../components/ProfileCard';
-import Experience from '../components/Experience';
+import dynamic from 'next/dynamic';
+
+const Experience = dynamic(() => import('../components/Experience'), { 
+  ssr: false,
+  loading: () => <div style={{ height: '800px' }} />
+});
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
