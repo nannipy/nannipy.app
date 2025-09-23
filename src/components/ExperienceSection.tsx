@@ -16,7 +16,7 @@ export default function ExperienceSection({
           href={`/projects/${item.id}`}
           className="block relative transform transition-all duration-300 hover:translate-x-1"
         >
-            <div className="min-h-[140px] p-6 rounded-lg transition-all duration-300 card">
+            <div className="min-h-[140px] p-6 rounded-3xl dark:bg-neutral-800/20 transition-all duration-300 card">
               <div className="flex flex-col gap-4">
                 <div className="font-medium group transition-all duration-300">
                   <span className="relative inline-block group">

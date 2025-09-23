@@ -105,7 +105,27 @@ export default function ProjectPage() {
   return (
     <main className="min-h-screen p-2 md:p-12 lg:p-16">
       <div className="max-w-full mx-auto">
-        <div className="p-6 rounded-lg card">
+         <Link href="/" className="group flex items-center transition-all duration-300 mb-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-5 w-5 transform transition-transform duration-300 group-hover:-translate-x-1"
+            >
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+            <p className="ml-2 h-7 relative">
+              Back to Home
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></span>
+            </p>
+          </Link>
+        <div className="p-6 rounded-3xl card">
           <div className="flex flex-col md:flex-row md:justify-between md:items-start md:gap-6">
               <h1 className="text-2xl font-bold tracking-tighter">
                 {project.name}
@@ -141,13 +161,13 @@ export default function ProjectPage() {
           </p>
         </div>
           {project.screenshots && project.screenshots.length > 0 && (
-          <div className="mt-8 p-6 rounded-lg card">
+          <div className="mt-8 p-6 rounded-3xl card">
             <h2 className="text-xl font-bold tracking-tighter mb-4">Screenshots</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {project.screenshots.map((screenshot, index) => (
                 <div
                   key={index}
-                  className="relative w-full h-64 rounded-lg overflow-hidden shadow-lg bg-black cursor-pointer"
+                  className="relative w-full h-64 rounded-3xl overflow-hidden shadow-lg bg-black cursor-pointer"
                   onClick={() => {
                   setSelectedImage({ src: screenshot, index });
                   setIsModalOpen(true);
@@ -158,7 +178,7 @@ export default function ProjectPage() {
                   alt={`Screenshot ${index + 1}`}
                   fill
                   style={{ objectFit: project.id === "adm-sport-and-nutrition" ? "contain" : "cover" }}
-                  className="rounded-lg"
+                  className="rounded-3xl"
                   />
                 </div>
               ))}
@@ -187,7 +207,7 @@ export default function ProjectPage() {
                 height={0}
                 sizes="100vw"
                 style={{ width: 'auto', height: 'auto', maxWidth: '90vw', maxHeight: '90vh', objectFit: 'contain' }}
-                className="rounded-lg"
+                className="rounded-3xl"
               />
               {project.screenshots && project.screenshots.length > 1 && (
                 <>
@@ -208,7 +228,7 @@ export default function ProjectPage() {
             </div>
           </div>
         )}
-        <div className="max-w-full prose dark:prose-invert mt-8 p-6 rounded-lg card markdown-body" style={{ overflowX: 'auto' }}>
+        <div className="max-w-full prose dark:prose-invert mt-8 p-6 rounded-3xl card markdown-body" style={{ overflowX: 'auto' }}>
           {loading ? (
             <p>Loading README...</p>
           ) : (
@@ -216,26 +236,7 @@ export default function ProjectPage() {
           )}
         </div>
         <div className="mt-8">
-          <Link href="/" className="group flex items-center transition-all duration-300">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-5 w-5 transform transition-transform duration-300 group-hover:-translate-x-1"
-            >
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
-            <p className="ml-2 h-7 relative">
-              Back to Home
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></span>
-            </p>
-          </Link>
+         
         </div>
       </div>
       <div className="fixed bottom-4 right-4">

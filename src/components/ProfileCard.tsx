@@ -10,7 +10,7 @@ export default function ProfileCard() {
   return (
     <div className="md:col-span-4 space-y-6">
       <Card className="p-6">
-        <h1 className="text-2xl font-bold tracking-tighter flex items-center gap-6">
+        <h1 className="text-2xl  tracking-tighter flex items-center gap-6">
           <Image
             src="/logo-en2.png"
             width={60}
@@ -18,7 +18,7 @@ export default function ProfileCard() {
             alt="Nannipy logo"
             priority
           />
-          <div className="flex-grow text-2xl font-bold">
+          <div className="flex-grow text-2xl ">
             Giovanni Battista Pernazza
           </div>
         </h1>
@@ -59,17 +59,11 @@ export default function ProfileCard() {
 
       <Card className="p-6">
         <div>
-          I&apos;m a software engineer passionate about building sleek, high-performance web applications with Next.js and TypeScript.
-          I love blending clean design with seamless functionality, always striving for intuitive user experiences. Beyond coding, I&apos;m a tech enthusiast,
-          a design lover, and a YouTube video binge-watcher, always exploring new trends.
-          <Link
-            href="https://strava.com/athletes/151899362"
-            className="underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Running
-          </Link> keeps me balanced and fuels my creativity.
+          Hey there! I&apos;m a software engineer who loves crafting sleek, high-performance applications with Python and TypeScript.
+          I&apos;m all about blending beautiful design with seamless functionality, always aiming for that &apos;wow&apos; factor in
+          user experience and efficiency. When I&apos;m not coding up a storm, you can find me geeking out over the latest tech trends,
+          admiring great design, or getting lost in a YouTube rabbit hole. Oh, and to keep my brain buzzing and creativity flowing, I hit
+          the pavement a good Run because a happy developer is a running developer (and one who loves pizza!).
         </div>
       </Card>
     </div>

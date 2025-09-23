@@ -80,7 +80,7 @@ html {
   width: 300%;
   will-change: transform;
   z-index: 0;
-  opacity: 0.20;
+  opacity: 0.0;
 }
 
 .dark .grainy::before {
