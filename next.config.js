@@ -4,10 +4,6 @@
  */
 
 /** @type {import("next").NextConfig} */
-const config = {
-    experimental:{
-        modern: true,
-     },
-};
+const config = {};
 
 export default config;

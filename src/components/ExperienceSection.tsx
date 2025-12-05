@@ -11,23 +11,24 @@ export default function ExperienceSection({
   return (
     <section className="text-left ">
       {items.map((item, index) => (
-        <Link
+        <div
           key={index}
-          href={`/projects/${item.id}`}
           className="block relative transform transition-all duration-300 hover:translate-x-1"
         >
             <div className="min-h-[140px] p-6 rounded-3xl dark:bg-neutral-800/20 transition-all duration-300 card">
-              <div className="flex flex-col gap-4">
-                <div className="font-medium group transition-all duration-300">
-                  <span className="relative inline-block group">
-                    {item.name}
-                    <span className="absolute left-0 bottom-0 block h-0.5 w-full bg-black dark:bg-white transition-transform duration-300 scale-x-0 origin-left group-hover:scale-x-100"></span>
-                  </span>
+              <Link href={`/projects/${item.id}`}>
+                <div className="flex flex-col gap-4">
+                  <div className="font-medium group transition-all duration-300">
+                    <span className="relative inline-block group">
+                      {item.name}
+                      <span className="absolute left-0 bottom-0 block h-0.5 w-full bg-black dark:bg-white transition-transform duration-300 scale-x-0 origin-left group-hover:scale-x-100"></span>
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <p className="mt-2 text-neutral-700 dark:text-neutral-300">
-                {item.description}
-              </p>
+                <p className="mt-2 text-neutral-700 dark:text-neutral-300">
+                  {item.description}
+                </p>
+              </Link>
               {item.github && (
                 <Link
                   href={item.github}
@@ -45,7 +46,7 @@ export default function ExperienceSection({
                 )}
               </div>
             {index !== items.length - 1 && <div className="mt-6"></div>}
-        </Link>
+        </div>
       ))}
     </section>
   );
